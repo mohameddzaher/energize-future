@@ -35,7 +35,7 @@ export default function ContactPage() {
             variants={reveal} 
             className="text-gray-400 text-sm max-w-md mx-auto"
           >
-            We'd love to hear from you! Reach out for inquiries, partnerships, or any questions.
+            We&apos;d love to hear from you! Reach out for inquiries, partnerships, or any questions.
           </motion.p>
         </section>
 
