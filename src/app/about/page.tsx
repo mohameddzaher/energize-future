@@ -6,18 +6,33 @@ import { FaSchool, FaTruckMoving, FaUsers, FaBaby, FaGlobeAmericas, FaRocket, Fa
 export default function AboutPage() {
   const reveal = { hidden: { opacity: 0, y: 14 }, show: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: i * 0.08 } }) }
 
-  // Team & Management Data
-  const management = [
-    { name: 'Mohamed Zaher', title: 'Founder & CEO', img: '/images/f.jpeg', desc: '15+ years in business development' },
-    { name: 'Sara AlNajdi', title: 'Head of Education', img: '/images/f.jpeg', desc: 'Education specialist with 12 years experience' },
-    { name: 'Omar Haddad', title: 'COO - Logistics', img: '/images/f.jpeg', desc: 'Logistics expert with 10+ years in transport' },
-  ]
+const management = [
+  {
+    name: 'Nader Magdy',
+    title: 'CEO',
+    img: '/images/nader.jpeg',
+    desc: 'Leading growth and innovation across all divisions.',
+  },
+  {
+    name: 'Eslam Sorour',
+    title: 'Head of B2C',
+    img: '/images/eslam.jpeg',
+    desc: 'Driving customer engagement and education operations.',
+  },
+  {
+    name: 'Sameh Hassan',
+    title: 'COO',
+    img: '/images/mrsam2.jpg',
+    desc: 'Overseeing logistics and operational excellence.',
+  },
+]
+
 
   const employees = [
-    { name: 'Layan Karim', title: 'Head of Childcare', img: '/images/f.jpeg' },
-    { name: 'Employee 1', title: 'Teacher', img: '/images/f.jpeg' },
-    { name: 'Employee 2', title: 'Driver', img: '/images/f.jpeg' },
-    { name: 'Employee 3', title: 'Administrator', img: '/images/f.jpeg' },
+    { name: 'Mohamed Zaher', title: 'Head of Software', img: '/images/darr.png' },
+    { name: 'Mohamed Al Zahrani', title: 'HR Manager', img: '/images/zaa.png' },
+    { name: 'Ahmed Eldeeb', title: 'Head oF Finance', img: '/images/ahmeddeeb.jpeg' },
+    { name: 'Yasser Helal', title: 'Head of Sales', img: '/images/yass.jpeg' },
     // { name: 'Employee 4', title: 'Caregiver', img: '/images/f.jpeg' },
     // { name: 'Employee 5', title: 'Technician', img: '/images/f.jpeg' },
   ]
@@ -39,7 +54,7 @@ export default function AboutPage() {
 
           <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }} className="flex justify-center">
             <div className="relative w-full max-w-xs rounded-xl overflow-hidden border border-white/10 shadow-md">
-              <img src="/images/f.jpeg" alt="About EFG" className="w-full h-40 object-cover" />
+              <img src="/images/re.jpeg" alt="About EFG" className="w-full h-40 object-cover" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-3">
                 <h3 className="text-md font-bold">Building Futures Since 2024</h3>
                 <p className="text-gray-300 text-xs mt-1">Excellence in education, childcare & logistics</p>
@@ -92,9 +107,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {management.map((m, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} className="bg-white/5 p-3 rounded-lg text-center border border-white/10 shadow hover:shadow-md transition-all">
-                <img src={m.img} alt={m.name} className="w-20 h-20 object-cover rounded-full mx-auto border border-[#f37121]/30 shadow-sm" />
-                <h3 className="font-bold text-sm mt-2">{m.name}</h3>
-                <div className="text-[#f37121] text-xs">{m.title}</div>
+                <img src={m.img} alt={m.name} className="w-30 h-40 object-cover rounded-2xl mx-auto  shadow-sm" />
+                <h3 className="font-bold text-sm mt-5">{m.name}</h3>
+                <div className="text-[#f37121] text-sm">{m.title}</div>
                 <p className="text-gray-400 text-xs mt-1">{m.desc}</p>
               </motion.div>
             ))}
@@ -109,9 +124,9 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {employees.map((e, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} className="bg-white/5 p-2 rounded-lg text-center border border-white/10 shadow hover:shadow-md transition-all">
-                <img src={e.img} alt={e.name} className="w-16 h-16 object-cover rounded-full mx-auto border border-[#f37121]/30 shadow-sm" />
-                <h3 className="font-bold text-xs mt-1">{e.name}</h3>
-                <div className="text-[#f37121] text-[10px]">{e.title}</div>
+                <img src={e.img} alt={e.name} className="w-25 h-40 object-cover rounded-2xl mx-auto  shadow-sm" />
+                <h3 className="font-bold text-sm mt-5">{e.name}</h3>
+                <div className="text-[#f37121] text-sm">{e.title}</div>
               </motion.div>
             ))}
           </div>
@@ -132,7 +147,7 @@ export default function AboutPage() {
             ].map((item, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }} className="bg-gray-900/70 p-3 rounded-lg text-center border border-white/10 shadow">
                 <div className="text-[#f37121] font-bold">{item.date}</div>
-                <div className="text-gray-400 text-xs mt-1">{item.event}</div>
+                <div className="text-gray-400 text-sm mt-1">{item.event}</div>
               </motion.div>
             ))}
           </div>

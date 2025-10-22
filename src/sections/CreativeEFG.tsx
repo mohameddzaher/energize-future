@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 import {
@@ -101,7 +102,7 @@ export default function CreativeEFG() {
 
           <motion.div initial={{ opacity: 0, scale: 0.98 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }} className="flex justify-center">
             <div className="relative w-full max-w-sm rounded-xl overflow-hidden border border-white/10 shadow-lg">
-              <img src="/images/f.jpeg" alt="Energize hero" className="w-full h-60 object-cover" />
+              <img src="/images/raai.jpeg" alt="Energize hero" className="w-full h-60 object-cover" />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
                 <h3 className="text-lg font-bold">Building Futures Since 2024</h3>
                 <p className="text-gray-300 text-xs mt-1">Committed to excellence in education, childcare, and logistics</p>
@@ -175,8 +176,8 @@ export default function CreativeEFG() {
               className="bg-gradient-to-b from-white/5 to-transparent rounded-xl p-4 shadow-lg border border-white/10 hover:border-[#f37121]/30 transition-all"
             >
               <div className="flex gap-3 items-start">
-                <div className="w-16 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
-                  <img src="/images/f.jpeg" alt="school" className="w-full h-full object-cover" />
+                <div className="w-40 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
+                  <img src="/images/hee.jpeg" alt="school" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#f37121]">EFG International Schools</h3>
@@ -188,9 +189,12 @@ export default function CreativeEFG() {
                   </div>
                 </div>
               </div>
-              <button className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1">
-                Learn More <FaArrowRight className="text-xs" />
-              </button>
+              <Link 
+    href="/divisions/international-schools"
+    className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1"
+  >
+    Learn More <FaArrowRight className="text-xs" />
+  </Link>
             </motion.div>
 
             {/* card 2 */}
@@ -199,8 +203,8 @@ export default function CreativeEFG() {
               className="bg-gradient-to-b from-white/5 to-transparent rounded-xl p-4 shadow-lg border border-white/10 hover:border-[#f37121]/30 transition-all"
             >
               <div className="flex gap-3 items-start">
-                <div className="w-16 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
-                  <img src="/images/f.jpeg" alt="childcare" className="w-full h-full object-cover" />
+                <div className="w-40 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
+                  <img src="/images/wf.jpeg" alt="childcare" className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#f37121]">EFG Childcare</h3>
@@ -212,9 +216,12 @@ export default function CreativeEFG() {
                   </div>
                 </div>
               </div>
-              <button className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1">
-                Learn More <FaArrowRight className="text-xs" />
-              </button>
+              <Link 
+  href="/divisions/childcare"
+  className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1"
+>
+  Learn More <FaArrowRight className="text-xs" />
+</Link>
             </motion.div>
 
             {/* card 3 */}
@@ -223,7 +230,7 @@ export default function CreativeEFG() {
               className="bg-gradient-to-b from-white/5 to-transparent rounded-xl p-4 shadow-lg border border-white/10 hover:border-[#f37121]/30 transition-all"
             >
               <div className="flex gap-3 items-start">
-                <div className="w-16 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
+                <div className="w-40 h-16 rounded-lg overflow-hidden border border-white/10 shadow">
                   <img src="/images/f.jpeg" alt="truck" className="w-full h-full object-cover" />
                 </div>
                 <div>
@@ -236,9 +243,12 @@ export default function CreativeEFG() {
                   </div>
                 </div>
               </div>
-              <button className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1">
-                Learn More <FaArrowRight className="text-xs" />
-              </button>
+              <Link 
+  href="/divisions/transport-logistics"
+  className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1"
+>
+  Learn More <FaArrowRight className="text-xs" />
+</Link>
             </motion.div>
           </div>
         </section>
@@ -413,7 +423,7 @@ export default function CreativeEFG() {
             className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 rounded-xl p-3 flex items-center justify-center h-full border border-white/10 shadow"
           >
             <div className="relative w-full h-48 rounded-lg overflow-hidden">
-              <img src="/images/f.jpeg" alt="sustainability" className="w-full h-full object-cover" />
+              <img src="/images/re.jpeg" alt="sustainability" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
                 <div className="text-white">
                   <h5 className="font-bold text-sm">Green Initiatives</h5>
@@ -432,10 +442,10 @@ export default function CreativeEFG() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: 'Mohamed Zaher', title: 'Founder & CEO', img: '/images/f.jpeg', desc: '15+ years in business development' },
-              { name: 'Sara AlNajdi', title: 'Head of Education', img: '/images/f.jpeg', desc: 'Education specialist with 12 years experience' },
-              { name: 'Omar Haddad', title: 'COO - Logistics', img: '/images/f.jpeg', desc: 'Logistics expert with 10+ years in transport' },
-              { name: 'Layan Karim', title: 'Head of Childcare', img: '/images/f.jpeg', desc: 'Child development specialist' },
+              { name: 'Mohamed Zaher', title: 'Software HOD', img: '/images/darr.png', desc: '8+ years in Software development' },
+              { name: 'Nader Magdy', title: 'CEO', img: '/images/nader.jpeg', desc: '15+ years in business development' },
+              { name: 'Eslam Sorour', title: 'B2C HOD', img: '/images/eslam.jpeg', desc: 'Logistics expert with 10+ years in transport' },
+              { name: 'Mohamed Al Zahrani', title: 'HR Manager', img: '/images/zaa.png', desc: 'Child development specialist' },
             ].map((p, i) => (
               <motion.div 
                 key={i} 
@@ -446,7 +456,7 @@ export default function CreativeEFG() {
                 className="bg-gradient-to-b from-white/5 to-transparent p-3 rounded-xl text-center border border-white/10 shadow hover:shadow-md transition-all"
               >
                 <div className="relative inline-block">
-                  <img src={p.img} alt={p.name} className="w-16 h-16 object-cover rounded-full mx-auto border border-[#f37121]/30 shadow" />
+                  <img src={p.img} alt={p.name} className="w-35 h-50 object-cover rounded-3xl mx-auto  shadow" />
                   <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#f37121] rounded-full border border-white"></div>
                 </div>
                 <div className="mt-3">
@@ -460,38 +470,52 @@ export default function CreativeEFG() {
         </section>
 
         {/* GALLERY */}
-        <section>
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-[#f37121]">Our Gallery</h2>
-            <p className="text-gray-400 mt-1 text-sm">Capturing moments from across our divisions</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { title: 'Campus - Riyadh', desc: 'Modern learning environments' },
-              { title: 'Childcare Activities', desc: 'Engaging early childhood programs' },
-              { title: 'Fleet', desc: 'State-of-the-art transport solutions' },
-              { title: 'Team', desc: 'Dedicated professionals' },
-              { title: 'Facilities', desc: 'World-class infrastructure' },
-              { title: 'Events', desc: 'Community engagement' },
-              { title: 'Technology', desc: 'Innovative solutions' },
-              { title: 'Awards', desc: 'Recognition of excellence' },
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: i * 0.05 }}
-                className="relative overflow-hidden rounded-lg group cursor-pointer"
-              >
-                <img src="/images/f.jpeg" alt={item.title} className="w-full h-28 object-cover transition-transform duration-500 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
-                  <div className="text-white font-bold text-xs">{item.title}</div>
-                  <div className="text-gray-300 text-xs">{item.desc}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+<section>
+  <div className="text-center mb-6">
+    <h2 className="text-2xl font-bold text-[#f37121]">Our Gallery</h2>
+    <p className="text-gray-400 mt-1 text-sm">
+      Capturing moments from across our divisions
+    </p>
+  </div>
+
+  <div className="grid grid-cols-2 md:grid-cols-7 gap-3">
+    {[
+      { title: 'Campus - Riyadh', desc: 'Modern learning environments', img: '/images/childcare/1.jpeg' },
+      { title: 'Childcare Activities', desc: 'Engaging early childhood programs', img: '/images/childcare/2.jpeg' },
+      { title: 'Fleet', desc: 'State-of-the-art transport solutions', img: '/images/childcare/3.jpeg' },
+      { title: 'Team', desc: 'Dedicated professionals', img: '/images/childcare/4.jpeg' },
+      { title: 'Facilities', desc: 'World-class infrastructure', img: '/images/childcare/5.jpeg' },
+      { title: 'Events', desc: 'Community engagement', img: '/images/childcare/6.jpeg' },
+      { title: 'Technology', desc: 'Innovative solutions', img: '/images/childcare/7.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/8.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/9.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/10.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/11.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/12.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/13.jpeg' },
+      { title: 'Awards', desc: 'Recognition of excellence', img: '/images/childcare/14.jpeg' },
+    ].map((item, i) => (
+      <motion.div 
+        key={i}
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ delay: i * 0.05 }}
+        className="relative overflow-hidden rounded-xl group cursor-pointer"
+      >
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-50 object-cover  transition-transform duration-500 group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-2">
+          <div className="text-white font-bold text-xs">{item.title}</div>
+          <div className="text-gray-300 text-xs">{item.desc}</div>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
 
         {/* PARTNERS & TESTIMONIALS */}
         <section className="grid md:grid-cols-3 gap-6 items-start">

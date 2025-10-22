@@ -117,7 +117,7 @@ export default function Footer() {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-[#f37121] rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">٢٠٣٠</span>
+                <span className="text-white font-bold text-sm">2030</span>
               </div>
               <div>
                 <h4 className="text-white font-bold text-sm">Saudi Vision 2030 Partner</h4>
