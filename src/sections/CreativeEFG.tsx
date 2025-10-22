@@ -442,10 +442,10 @@ export default function CreativeEFG() {
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { name: 'Sameh Hassan', title: 'COO', img: '/images/mrsam2.jpg', desc: '8+ years in Management ' },
-              { name: 'Nader Magdy', title: 'CEO', img: '/images/nader.jpeg', desc: '15+ years in business development' },
-              { name: 'Eslam Sorour', title: 'B2C HOD', img: '/images/eslam.jpeg', desc: 'Logistics expert with 10+ years in transport' },
-              { name: 'Mohamed Al Zahrani', title: 'HR Manager', img: '/images/zaa.png', desc: 'Child development specialist' },
+              { name: 'Ahmed Hassan', title: 'COO', img: '/images/107.jpeg', desc: '8+ years in Management ' },
+              { name: 'Hossam Magdy', title: 'CEO', img: '/images/101.jpeg', desc: '15+ years in business development' },
+              { name: 'Eslam Zaky', title: 'B2C HOD', img: '/images/102.jpeg', desc: 'Logistics expert with 10+ years in transport' },
+              { name: 'Mohamed Ramy', title: 'HR Manager', img: '/images/103.jpeg', desc: 'Child development specialist' },
             ].map((p, i) => (
               <motion.div 
                 key={i} 

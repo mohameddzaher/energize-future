@@ -8,31 +8,31 @@ export default function AboutPage() {
 
 const management = [
   {
-    name: 'Nader Magdy',
+    name: 'Ahmed Magdy',
     title: 'CEO',
-    img: '/images/nader.jpeg',
+    img: '/images/106.jpeg',
     desc: 'Leading growth and innovation across all divisions.',
   },
   {
-    name: 'Eslam Sorour',
+    name: 'Eslam Samy',
     title: 'Head of B2C',
-    img: '/images/eslam.jpeg',
+    img: '/images/102.jpeg',
     desc: 'Driving customer engagement and education operations.',
   },
   {
-    name: 'Sameh Hassan',
+    name: 'Hossam Mohamed',
     title: 'COO',
-    img: '/images/mrsam2.jpg',
+    img: '/images/103.jpeg',
     desc: 'Overseeing logistics and operational excellence.',
   },
 ]
 
 
   const employees = [
-    { name: 'Mohamed Zaher', title: 'Head of Software', img: '/images/darr.png' },
-    { name: 'Mohamed Al Zahrani', title: 'HR Manager', img: '/images/zaa.png' },
-    { name: 'Ahmed Eldeeb', title: 'Head oF Finance', img: '/images/ahmeddeeb.jpeg' },
-    { name: 'Yasser Helal', title: 'Head of Sales', img: '/images/yass.jpeg' },
+    { name: 'Mohamed Zaher', title: 'Head of Software', img: '/images/100.jpeg' },
+    { name: 'Ahmed Ehab', title: 'HR Manager', img: '/images/104.jpeg' },
+    { name: 'Ramy Ahmed', title: 'Head oF Finance', img: '/images/106.jpeg' },
+    { name: 'Hossam Helal', title: 'Head of Sales', img: '/images/107.jpeg' },
     // { name: 'Employee 4', title: 'Caregiver', img: '/images/f.jpeg' },
     // { name: 'Employee 5', title: 'Technician', img: '/images/f.jpeg' },
   ]
