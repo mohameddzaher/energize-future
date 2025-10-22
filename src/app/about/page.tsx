@@ -31,7 +31,7 @@ const management = [
   const employees = [
     { name: 'Mohamed Zaher', title: 'Head of Software', img: '/images/100.jpeg' },
     { name: 'Ahmed Ehab', title: 'HR Manager', img: '/images/104.jpeg' },
-    { name: 'Ramy Ahmed', title: 'Head oF Finance', img: '/images/106.jpeg' },
+    { name: 'Ramy Ahmed', title: 'Head oF Finance', img: '/images/108.jpeg' },
     { name: 'Hossam Helal', title: 'Head of Sales', img: '/images/107.jpeg' },
     // { name: 'Employee 4', title: 'Caregiver', img: '/images/f.jpeg' },
     // { name: 'Employee 5', title: 'Technician', img: '/images/f.jpeg' },
