@@ -37,7 +37,7 @@ export default function Header() {
 
   const socialLinks = [
     { href: 'https://www.linkedin.com/company/energizelco', icon: <FaLinkedin />, color: 'text-[#0077b5]' },
-    { href: 'https://x.com/energizelco', icon: <FaXTwitter />, color: 'text-gray-500' },
+    { href: 'https://x.com/energizelco', icon: <FaXTwitter />, color: 'text-gray-300' },
     { href: 'https://www.instagram.com/energizelco/', icon: <FaInstagram />, color: 'text-[#E4405F]' },
     { href: 'https://www.youtube.com/@energizelco', icon: <FaYoutube />, color: 'text-[#FF0000]' },
     { href: 'https://www.facebook.com/energizelco', icon: <FaFacebook />, color: 'text-[#1877F2]' },
@@ -89,7 +89,7 @@ export default function Header() {
           <button
             aria-label="Toggle menu"
             onClick={() => setOpen((v) => !v)}
-            className="p-2 rounded-md border"
+            className="p-2 rounded-md border border-white/20 hover:border-[#f37121] transition-colors"
           >
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
               <path
@@ -110,31 +110,33 @@ export default function Header() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="md:hidden border-t bg-white shadow-md"
+            className="md:hidden border-t border-white/10 bg-[#0a0f1d] shadow-lg"
           >
-            <div className="px-6 py-4 flex flex-col gap-3">
+            <div className="px-6 py-6 flex flex-col gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`transition ${
+                  className={`text-base font-medium transition-all duration-300 py-2 px-3 rounded-lg ${
                     pathname === link.href
-                      ? 'text-[#f37121]'
-                      : 'hover:text-[#f37121] text-gray-800'
+                      ? 'text-[#f37121] bg-white/5 border border-[#f37121]/20'
+                      : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`}
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="flex gap-4 mt-4 justify-center">
+              
+              {/* Social Links */}
+              <div className="flex gap-4 mt-4 pt-4 border-t border-white/10 justify-center">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`${social.color} hover:opacity-80 transition-opacity duration-300 text-lg`}
+                    className={`${social.color} hover:scale-110 transition-all duration-300 text-xl`}
                   >
                     {social.icon}
                   </a>
