@@ -13,39 +13,15 @@ export default function Home() {
       {" "}
       {/* غيرت من overflow-x-hidden إلى overflow-hidden */}
       <Hero />
-      {/* <section className="w-full overflow-hidden">
-        <div className="w-full">
-          <AboutPreview />
-        </div>
-      </section> */}
       
-{/* <section className="w-full overflow-hidden">
-        <div className="w-full">
-          <VisionMissionValues />
-        </div>
-      </section> */}
-
 
       <section className="w-full overflow-hidden">
         <div className="w-full">
           <CreativeEFG />
         </div>
       </section>
-      
-      {/* <section className="w-full overflow-hidden">
-        <div className="w-full">
-          <OurDivisions />
-        </div>
-      </section> */}
 
-      {/* <section className="w-full overflow-hidden">
-        <div className="w-full">
-          <ContactSection />
-        </div>
-      </section> */}
       
-      
-
       
     </div>
   );
