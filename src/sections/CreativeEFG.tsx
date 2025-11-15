@@ -1329,75 +1329,107 @@ export default function CreativeEFG() {
             ))}
           </div>
         </section>
-
-        {/* PARTNERS & TESTIMONIALS */}
-        <section className="grid md:grid-cols-3 gap-6 items-start">
-          <motion.div 
-            initial={{ opacity: 0, x: -16 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-4 rounded-xl border border-white/10 shadow"
-          >
-            <h4 className="text-lg font-bold text-[#f37121] mb-3">Anchor Partners</h4>
-            <div className="grid grid-cols-2 gap-3">
-              {['Construction', 'Logistics', 'Education', 'Real Estate', 'Technology', 'Finance'].map((partner, i) => (
-                <div key={i} className="bg-white/5 p-2 rounded-lg flex items-center justify-center h-12">
-                  <div className="text-gray-400 text-xs font-medium">{partner} Partner</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          <div className="md:col-span-2 space-y-4">
-            <motion.div 
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="bg-white/8 backdrop-blur p-4 rounded-xl border border-white/10 shadow-lg"
-            >
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f37121]/20 flex items-center justify-center text-[#f37121] flex-shrink-0">
-                  <FaQuoteLeft />
-                </div>
-                <div>
-                  <p className="italic text-gray-300 text-sm">
-                    &quot;EFG Properties delivered our commercial complex ahead of schedule with exceptional quality. Their attention to detail and project management is outstanding.&quot;
-                  </p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">RC</div>
-                    <div>
-                      <div className="font-bold text-[#f37121] text-sm">Real Estate Client</div>
-                      <div className="text-gray-400 text-xs">Commercial Developer</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="bg-white/8 backdrop-blur p-4 rounded-xl border border-white/10 shadow-lg"
-            >
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#f37121]/20 flex items-center justify-center text-[#f37121] flex-shrink-0">
-                  <FaQuoteLeft />
-                </div>
-                <div>
-                  <p className="italic text-gray-300 text-sm">
-                    &quot;The childcare solution improved staff retention and morale - excellent communications and outstanding care for our employees&apos; children.&quot;
-                  </p>
-                  <div className="mt-3 flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center text-xs text-gray-400">HM</div>
-                    <div>
-                      <div className="font-bold text-[#f37121] text-sm">HR Manager, Industrial Firm</div>
-                      <div className="text-gray-400 text-xs">Manufacturing Sector</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+{/* IMPACT & RECOGNITION */}
+<section className="grid md:grid-cols-2 gap-6 items-stretch">
+  <motion.div 
+    initial={{ opacity: 0, x: -16 }}
+    whileInView={{ opacity: 1, x: 0 }}
+    className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-5 rounded-xl border border-white/10 shadow-lg"
+  >
+    <h4 className="text-lg font-bold text-[#f37121] mb-4">Our Impact</h4>
+    <div className="space-y-4">
+      {[
+        {
+          icon: '🏗️',
+          title: 'Construction Excellence',
+          description: '15+ projects delivered with 100% client satisfaction'
+        },
+        {
+          icon: '🎓', 
+          title: 'Educational Innovation',
+          description: '3 international schools setting new standards in KSA'
+        },
+        {
+          icon: '🚛',
+          title: 'Logistics Leadership',
+          description: '34+ truck fleet serving major industrial projects' 
+        },
+        {
+          icon: '👶',
+          title: 'Childcare Quality',
+          description: '100+ children benefiting from premium childcare services'
+        }
+      ].map((impact, i) => (
+        <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-all">
+          <div className="text-2xl flex-shrink-0">{impact.icon}</div>
+          <div>
+            <h5 className="font-semibold text-white text-sm mb-1">{impact.title}</h5>
+            <p className="text-gray-400 text-xs">{impact.description}</p>
           </div>
-        </section>
+        </div>
+      ))}
+    </div>
+  </motion.div>
+
+  <div className="flex flex-col gap-4 h-full">
+    <motion.div 
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      className="bg-white/8 backdrop-blur p-5 rounded-xl border border-white/10 shadow-lg flex-1 flex flex-col justify-center"
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-full bg-[#f37121]/20 flex items-center justify-center text-[#f37121] flex-shrink-0">
+          <FaAward className="text-lg" />
+        </div>
+        <div className="flex-1">
+          <h4 className="font-bold text-white text-lg mb-3">Industry Recognition</h4>
+          <div className="space-y-3">
+            {[
+              'ISO 9001:2015 Certified Quality Management',
+              'Saudi Vision 2030 Strategic Partner',
+              'Ministry of Education Approved Curriculum', 
+              'General Authority of Transport Licensed'
+            ].map((achievement, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#f37121] rounded-full flex-shrink-0"></div>
+                <span className="text-gray-300 text-sm">{achievement}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+    
+    <motion.div 
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="bg-gradient-to-r from-[#f37121]/10 to-orange-500/10 p-5 rounded-xl border border-[#f37121]/20 shadow-lg flex-1 flex flex-col justify-center"
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-full bg-[#f37121] flex items-center justify-center text-white flex-shrink-0">
+          <FaRocket className="text-lg" />
+        </div>
+        <div className="flex-1">
+          <h4 className="font-bold text-white text-lg mb-3">Growth Metrics</h4>
+          <div className="grid grid-cols-2 gap-3">
+            {[
+              { value: '360+', label: 'Team Members' },
+              { value: '150+', label: 'Cities' },
+              { value: '99+', label: 'Projects' },
+              { value: '100%', label: 'Satisfaction' }
+            ].map((metric, i) => (
+              <div key={i} className="text-center p-2 rounded-lg bg-white/5">
+                <div className="text-[#f37121] font-bold text-lg">{metric.value}</div>
+                <div className="text-gray-400 text-xs">{metric.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+</section>
 
         {/* CONTACT CTA */}
         <section id="contact" className="bg-gradient-to-r from-gray-900/80 to-gray-800/60 backdrop-blur rounded-xl p-6 border border-white/10 shadow-lg">
