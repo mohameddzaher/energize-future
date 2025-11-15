@@ -1098,18 +1098,12 @@ import {
 } from 'react-icons/fa'
 
 export default function AboutPage() {
-  // common easing as cubic-bezier array to satisfy TS types
-  const defaultEase = [0.42, 0, 0.58, 1]
-
   const reveal = { 
     hidden: { opacity: 0, y: 20 }, 
     show: { 
       opacity: 1, 
       y: 0,
-      transition: { 
-        duration: 0.6,
-        ease: defaultEase
-      } 
+      transition: { duration: 0.6 } 
     } 
   }
 
@@ -1118,10 +1112,7 @@ export default function AboutPage() {
     show: { 
       opacity: 1, 
       x: 0,
-      transition: { 
-        duration: 0.6,
-        ease: defaultEase
-      }
+      transition: { duration: 0.6 }
     }
   }
 
@@ -1130,10 +1121,7 @@ export default function AboutPage() {
     show: { 
       opacity: 1, 
       x: 0,
-      transition: { 
-        duration: 0.6,
-        ease: defaultEase
-      }
+      transition: { duration: 0.6 }
     }
   }
 
@@ -1142,10 +1130,7 @@ export default function AboutPage() {
     show: { 
       opacity: 1, 
       scale: 1,
-      transition: { 
-        duration: 0.5,
-        ease: defaultEase
-      }
+      transition: { duration: 0.5 }
     }
   }
 
@@ -1294,12 +1279,12 @@ export default function AboutPage() {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ x: [-10, 10, -10], y: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 15, ease: defaultEase }}
+          transition={{ repeat: Infinity, duration: 15 }}
           className="absolute -left-20 -top-20 w-40 h-40 bg-[#f37121]/5 rounded-full blur-2xl"
         />
         <motion.div
           animate={{ x: [10, -10, 10], y: [0, -5, 0] }}
-          transition={{ repeat: Infinity, duration: 18, ease: defaultEase }}
+          transition={{ repeat: Infinity, duration: 18 }}
           className="absolute -right-20 -bottom-20 w-44 h-44 bg-blue-500/5 rounded-full blur-2xl"
         />
       </div>
@@ -1376,14 +1361,14 @@ export default function AboutPage() {
             {/* Floating elements */}
             <motion.div
               animate={{ y: [-5, 5, -5] }}
-              transition={{ repeat: Infinity, duration: 3, ease: defaultEase }}
+              transition={{ repeat: Infinity, duration: 3 }}
               className="absolute -top-2 -left-2 bg-gradient-to-r from-[#f37121] to-orange-500 p-2 rounded-lg shadow"
             >
               <FaAward className="text-white text-sm" />
             </motion.div>
             <motion.div
               animate={{ y: [5, -5, 5] }}
-              transition={{ repeat: Infinity, duration: 4, ease: defaultEase, delay: 0.5 }}
+              transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
               className="absolute -bottom-2 -right-2 bg-gradient-to-r from-blue-500 to-cyan-500 p-2 rounded-lg shadow"
             >
               <FaRocket className="text-white text-sm" />
