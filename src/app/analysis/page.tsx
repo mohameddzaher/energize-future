@@ -1,8 +1,7 @@
-
-
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { ChartOptions } from "chart.js";
 import { motion } from "framer-motion";
 import {
   Chart as ChartJS,
@@ -611,8 +610,18 @@ export default function HRDashboard() {
   // Generate month labels
   const monthsLabels = useMemo(() => {
     const base = [
-      "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", 
-      "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"
+      "يناير",
+      "فبراير",
+      "مارس",
+      "أبريل",
+      "مايو",
+      "يونيو",
+      "يوليو",
+      "أغسطس",
+      "سبتمبر",
+      "أكتوبر",
+      "نوفمبر",
+      "ديسمبر",
     ];
     const arr: string[] = [];
 
@@ -629,42 +638,68 @@ export default function HRDashboard() {
     let filtered = realEmployees;
 
     if (selectedBranch !== "all") {
-      filtered = filtered.filter(emp => {
+      filtered = filtered.filter((emp) => {
         if (selectedBranch === "جدة") return true; // Most employees are in Jeddah
-        if (selectedBranch === "مكه") return emp.name.includes("مكه") || emp.jobTitle.includes("مكه");
+        if (selectedBranch === "مكه")
+          return emp.name.includes("مكه") || emp.jobTitle.includes("مكه");
         return true;
       });
     }
 
     if (selectedJobTitle !== "all") {
-      filtered = filtered.filter(emp => emp.jobTitle === selectedJobTitle);
+      filtered = filtered.filter((emp) => emp.jobTitle === selectedJobTitle);
     }
 
     const totalEmployees = filtered.length;
-    const activeContracts = filtered.filter(emp => emp.contractStatus === "ساري").length;
-    
+    const activeContracts = filtered.filter(
+      (emp) => emp.contractStatus === "ساري"
+    ).length;
+
     // Nationality stats
-    const saudi = filtered.filter(emp => emp.nationality === "السعوديه").length;
-    const egyptian = filtered.filter(emp => emp.nationality === "مصر").length;
-    const indian = filtered.filter(emp => emp.nationality === "الهند").length;
+    const saudi = filtered.filter(
+      (emp) => emp.nationality === "السعوديه"
+    ).length;
+    const egyptian = filtered.filter((emp) => emp.nationality === "مصر").length;
+    const indian = filtered.filter((emp) => emp.nationality === "الهند").length;
     const otherNationalities = totalEmployees - saudi - egyptian - indian;
 
     // Job title stats
-    const drivers = filtered.filter(emp => emp.jobTitle === "سائق").length;
-    const management = filtered.filter(emp => emp.jobTitle === "ادارة").length;
-    const coordinators = filtered.filter(emp => emp.jobTitle === "موائمه").length;
-    const customerService = filtered.filter(emp => emp.jobTitle === "خدمة عملاء").length;
+    const drivers = filtered.filter((emp) => emp.jobTitle === "سائق").length;
+    const management = filtered.filter(
+      (emp) => emp.jobTitle === "ادارة"
+    ).length;
+    const coordinators = filtered.filter(
+      (emp) => emp.jobTitle === "موائمه"
+    ).length;
+    const customerService = filtered.filter(
+      (emp) => emp.jobTitle === "خدمة عملاء"
+    ).length;
 
     // Salary calculations
-    const totalActualSalary = filtered.reduce((sum, emp) => sum + emp.actualSalary, 0);
-    const totalContractSalary = filtered.reduce((sum, emp) => sum + emp.contractSalary, 0);
+    const totalActualSalary = filtered.reduce(
+      (sum, emp) => sum + emp.actualSalary,
+      0
+    );
+    const totalContractSalary = filtered.reduce(
+      (sum, emp) => sum + emp.contractSalary,
+      0
+    );
     const avgActualSalary = Math.round(totalActualSalary / totalEmployees);
     const avgContractSalary = Math.round(totalContractSalary / totalEmployees);
 
     // Allowance calculations
-    const totalHousingAllowance = filtered.reduce((sum, emp) => sum + emp.housingAllowance, 0);
-    const totalTransportAllowance = filtered.reduce((sum, emp) => sum + emp.transportAllowance, 0);
-    const totalOtherAllowance = filtered.reduce((sum, emp) => sum + emp.otherAllowance, 0);
+    const totalHousingAllowance = filtered.reduce(
+      (sum, emp) => sum + emp.housingAllowance,
+      0
+    );
+    const totalTransportAllowance = filtered.reduce(
+      (sum, emp) => sum + emp.transportAllowance,
+      0
+    );
+    const totalOtherAllowance = filtered.reduce(
+      (sum, emp) => sum + emp.otherAllowance,
+      0
+    );
 
     // Bank distribution
     const bankCounts = filtered.reduce((acc, emp) => {
@@ -674,7 +709,7 @@ export default function HRDashboard() {
 
     // Contract analysis
     const now = new Date();
-    const contractsExpiringSoon = filtered.filter(emp => {
+    const contractsExpiringSoon = filtered.filter((emp) => {
       if (!emp.contractEnd) return false;
       const endDate = new Date(emp.contractEnd);
       const diffTime = endDate.getTime() - now.getTime();
@@ -682,14 +717,14 @@ export default function HRDashboard() {
       return diffDays <= 90 && diffDays > 0;
     }).length;
 
-    const expiredContracts = filtered.filter(emp => {
+    const expiredContracts = filtered.filter((emp) => {
       if (!emp.contractEnd) return false;
       const endDate = new Date(emp.contractEnd);
       return endDate < now;
     }).length;
 
     // Iqama analysis
-    const iqamaExpiringSoon = filtered.filter(emp => {
+    const iqamaExpiringSoon = filtered.filter((emp) => {
       if (!emp.iqamaExpiry) return false;
       const expiryDate = new Date(emp.iqamaExpiry);
       const diffTime = expiryDate.getTime() - now.getTime();
@@ -698,8 +733,10 @@ export default function HRDashboard() {
     }).length;
 
     // Driver analysis
-    const driversWithCards = filtered.filter(emp => emp.driverCardNumber).length;
-    const driverCardsExpiringSoon = filtered.filter(emp => {
+    const driversWithCards = filtered.filter(
+      (emp) => emp.driverCardNumber
+    ).length;
+    const driverCardsExpiringSoon = filtered.filter((emp) => {
       if (!emp.cardExpiry) return false;
       const expiryDate = new Date(emp.cardExpiry);
       const diffTime = expiryDate.getTime() - now.getTime();
@@ -749,18 +786,32 @@ export default function HRDashboard() {
 
     for (let m = 0; m < monthsLabels.length; m++) {
       const growthFactor = m * 0.3;
-      const hires = Math.max(1, Math.round(2 + growthFactor + Math.sin(m / 2) * 1.5));
+      const hires = Math.max(
+        1,
+        Math.round(2 + growthFactor + Math.sin(m / 2) * 1.5)
+      );
       const exits = m < 2 ? 0 : Math.round(Math.random() * 1);
-      const openRoles = Math.max(2, Math.round(realStats.totalEmployees * 0.2 * (1 + growthFactor * 0.1)));
+      const openRoles = Math.max(
+        2,
+        Math.round(realStats.totalEmployees * 0.2 * (1 + growthFactor * 0.1))
+      );
       const avgSalary = realStats.avgActualSalary;
-      const tasksCompleted = Math.round(realStats.totalEmployees * 3 * (0.8 + growthFactor * 0.2));
+      const tasksCompleted = Math.round(
+        realStats.totalEmployees * 3 * (0.8 + growthFactor * 0.2)
+      );
       const satisfaction = Math.min(90, Math.max(75, 80 + growthFactor * 2));
       const timeToHire = Math.max(10, Math.round(20 - growthFactor * 2));
-      const perf = Math.min(95, Math.max(78, Math.round(80 + growthFactor * 3)));
+      const perf = Math.min(
+        95,
+        Math.max(78, Math.round(80 + growthFactor * 3))
+      );
       const leaves = Math.round(realStats.totalEmployees * 0.15);
-      const trainings = Math.round(realStats.totalEmployees * 0.25 * (1 + growthFactor * 0.3));
+      const trainings = Math.round(
+        realStats.totalEmployees * 0.25 * (1 + growthFactor * 0.3)
+      );
       const promoted = m >= 4 ? 1 : 0;
-      const salaryIncrements = m >= 3 ? Math.round(realStats.totalEmployees * 0.1) : 0;
+      const salaryIncrements =
+        m >= 3 ? Math.round(realStats.totalEmployees * 0.1) : 0;
 
       const statusDoneFlags = {
         "توثيق عقود الموظفين": m > 0,
@@ -819,9 +870,18 @@ export default function HRDashboard() {
         perf = Math.min(95, Math.round(82 + Math.sin(m / 1.5) * 8));
       }
 
-      const openRoles = Math.max(1, Math.round(hires * 2 * (0.8 + Math.random() * 0.4)));
-      const avgSalary = Math.round((selectedHR === "moh" ? 12000 : selectedHR === "moh2" ? 9000 : 7500) + Math.sin(m / 2) * 500);
-      const timeToHire = Math.max(7, Math.round(15 - hires * 0.8 + Math.random() * 4));
+      const openRoles = Math.max(
+        1,
+        Math.round(hires * 2 * (0.8 + Math.random() * 0.4))
+      );
+      const avgSalary = Math.round(
+        (selectedHR === "moh" ? 12000 : selectedHR === "moh2" ? 9000 : 7500) +
+          Math.sin(m / 2) * 500
+      );
+      const timeToHire = Math.max(
+        7,
+        Math.round(15 - hires * 0.8 + Math.random() * 4)
+      );
       const leaves = Math.round(tasks * 0.1);
       const trainings = Math.round((hires + 2) * 0.8);
       const promoted = m === 3 ? 1 : 0;
@@ -861,56 +921,79 @@ export default function HRDashboard() {
 
   // Calculate totals from aggregated data
   const totals = useMemo(() => {
-    if (!aggregated) return {
-      totalHires: 0, totalExits: 0, totalOpenRoles: 0, overallAvgSalary: 0,
-      totalTasks: 0, avgSatisfaction: 0, avgTimeToHire: 0, totalLeaves: 0,
-      totalTrainings: 0, totalPromoted: 0, totalSalaryIncrements: 0,
-    };
+    if (!aggregated)
+      return {
+        totalHires: 0,
+        totalExits: 0,
+        totalOpenRoles: 0,
+        overallAvgSalary: 0,
+        totalTasks: 0,
+        avgSatisfaction: 0,
+        avgTimeToHire: 0,
+        totalLeaves: 0,
+        totalTrainings: 0,
+        totalPromoted: 0,
+        totalSalaryIncrements: 0,
+      };
 
     return {
       totalHires: aggregated.reduce((s, r) => s + r.hires, 0),
       totalExits: aggregated.reduce((s, r) => s + r.exits, 0),
-      totalOpenRoles: Math.round(aggregated.reduce((s, r) => s + r.openRoles, 0) / aggregated.length),
-      overallAvgSalary: Math.round(aggregated.reduce((s, r) => s + r.avgSalary, 0) / aggregated.length),
+      totalOpenRoles: Math.round(
+        aggregated.reduce((s, r) => s + r.openRoles, 0) / aggregated.length
+      ),
+      overallAvgSalary: Math.round(
+        aggregated.reduce((s, r) => s + r.avgSalary, 0) / aggregated.length
+      ),
       totalTasks: aggregated.reduce((s, r) => s + r.tasksCompleted, 0),
-      avgSatisfaction: Math.round(aggregated.reduce((s, r) => s + r.satisfaction, 0) / aggregated.length),
-      avgTimeToHire: Math.round(aggregated.reduce((s, r) => s + r.timeToHire, 0) / aggregated.length),
+      avgSatisfaction: Math.round(
+        aggregated.reduce((s, r) => s + r.satisfaction, 0) / aggregated.length
+      ),
+      avgTimeToHire: Math.round(
+        aggregated.reduce((s, r) => s + r.timeToHire, 0) / aggregated.length
+      ),
       totalLeaves: aggregated.reduce((s, r) => s + r.leaves, 0),
       totalTrainings: aggregated.reduce((s, r) => s + r.trainings, 0),
       totalPromoted: aggregated.reduce((s, r) => s + r.promoted, 0),
-      totalSalaryIncrements: aggregated.reduce((s, r) => s + r.salaryIncrements, 0),
+      totalSalaryIncrements: aggregated.reduce(
+        (s, r) => s + r.salaryIncrements,
+        0
+      ),
     };
   }, [aggregated]);
 
   // Enhanced chart options
-  const commonOptions: unknown = useMemo(() => ({
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-        labels: {
-          boxWidth: 12,
-          boxHeight: 8,
-          color: "#9ca3af",
-          font: { size: 11 },
+  const commonOptions: ChartOptions<"pie"> = useMemo(
+    () => ({
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+          labels: {
+            boxWidth: 12,
+            boxHeight: 8,
+            color: "#9ca3af",
+            font: { size: 11 },
+          },
+        },
+        tooltip: {
+          backgroundColor: "rgba(15, 15, 15, 0.95)",
+          titleColor: "#fb923c",
+          bodyColor: "#e5e7eb",
+          borderColor: "#fb923c",
+          borderWidth: 1,
+          cornerRadius: 8,
+          displayColors: true,
         },
       },
-      tooltip: {
-        backgroundColor: "rgba(15, 15, 15, 0.95)",
-        titleColor: "#fb923c",
-        bodyColor: "#e5e7eb",
-        borderColor: "#fb923c",
-        borderWidth: 1,
-        cornerRadius: 8,
-        displayColors: true,
+      animation: {
+        duration: 2000,
+        easing: "easeOutQuart",
       },
-    },
-    animation: {
-      duration: 2000,
-      easing: "easeOutQuart",
-    },
-    maintainAspectRatio: false,
-  }), []);
+      maintainAspectRatio: false,
+    }),
+    []
+  );
 
   // Chart data configurations
   const lineData = {
@@ -953,33 +1036,53 @@ export default function HRDashboard() {
 
   const nationalityData = {
     labels: ["🇸🇦 سعوديين", "🇪🇬 مصريين", "🇮🇳 هندي", "🌍 أخرى"],
-    datasets: [{
-      data: [realStats.saudi, realStats.egyptian, realStats.indian, realStats.otherNationalities],
-      backgroundColor: ["#10b981", "#3b82f6", "#f59e0b", "#8b5cf6"],
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        data: [
+          realStats.saudi,
+          realStats.egyptian,
+          realStats.indian,
+          realStats.otherNationalities,
+        ],
+        backgroundColor: ["#10b981", "#3b82f6", "#f59e0b", "#8b5cf6"],
+        borderWidth: 2,
+      },
+    ],
   };
 
   const jobTitleData = {
     labels: ["👨‍💼 إدارة", "🚛 سائقين", "📊 موائمين", "📞 خدمة عملاء"],
-    datasets: [{
-      data: [realStats.management, realStats.drivers, realStats.coordinators, realStats.customerService],
-      backgroundColor: ["#8b5cf6", "#06b6d4", "#84cc16", "#f97316"],
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        data: [
+          realStats.management,
+          realStats.drivers,
+          realStats.coordinators,
+          realStats.customerService,
+        ],
+        backgroundColor: ["#8b5cf6", "#06b6d4", "#84cc16", "#f97316"],
+        borderWidth: 2,
+      },
+    ],
   };
 
   const salaryComparisonData = {
-    labels: realStats.filteredEmployees.slice(0, 8).map(emp => emp.name.split(' ').slice(-2).join(' ')),
+    labels: realStats.filteredEmployees
+      .slice(0, 8)
+      .map((emp) => emp.name.split(" ").slice(-2).join(" ")),
     datasets: [
       {
         label: "الراتب الفعلي",
-        data: realStats.filteredEmployees.slice(0, 8).map(emp => emp.actualSalary),
+        data: realStats.filteredEmployees
+          .slice(0, 8)
+          .map((emp) => emp.actualSalary),
         backgroundColor: "rgba(16, 185, 129, 0.8)",
       },
       {
         label: "الراتب في العقد",
-        data: realStats.filteredEmployees.slice(0, 8).map(emp => emp.contractSalary),
+        data: realStats.filteredEmployees
+          .slice(0, 8)
+          .map((emp) => emp.contractSalary),
         backgroundColor: "rgba(59, 130, 246, 0.8)",
       },
     ],
@@ -987,45 +1090,63 @@ export default function HRDashboard() {
 
   const bankDistributionData = {
     labels: Object.keys(realStats.bankCounts),
-    datasets: [{
-      data: Object.values(realStats.bankCounts),
-      backgroundColor: ["#10b981", "#3b82f6", "#f59e0b", "#8b5cf6", "#ef4444"],
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        data: Object.values(realStats.bankCounts),
+        backgroundColor: [
+          "#10b981",
+          "#3b82f6",
+          "#f59e0b",
+          "#8b5cf6",
+          "#ef4444",
+        ],
+        borderWidth: 2,
+      },
+    ],
   };
 
   const allowanceData = {
     labels: ["بدل السكن", "بدل المواصلات", "بدل أخرى"],
-    datasets: [{
-      data: [realStats.totalHousingAllowance, realStats.totalTransportAllowance, realStats.totalOtherAllowance],
-      backgroundColor: ["#10b981", "#3b82f6", "#f59e0b"],
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        data: [
+          realStats.totalHousingAllowance,
+          realStats.totalTransportAllowance,
+          realStats.totalOtherAllowance,
+        ],
+        backgroundColor: ["#10b981", "#3b82f6", "#f59e0b"],
+        borderWidth: 2,
+      },
+    ],
   };
 
   const contractStatusData = {
     labels: ["🟢 عقود سارية", "🟡 تنتهي قريباً", "🔴 منتهية"],
-    datasets: [{
-      data: [
-        realStats.activeContracts - realStats.contractsExpiringSoon,
-        realStats.contractsExpiringSoon,
-        realStats.expiredContracts
-      ],
-      backgroundColor: ["#10b981", "#f59e0b", "#ef4444"],
-      borderWidth: 2,
-    }],
+    datasets: [
+      {
+        data: [
+          realStats.activeContracts - realStats.contractsExpiringSoon,
+          realStats.contractsExpiringSoon,
+          realStats.expiredContracts,
+        ],
+        backgroundColor: ["#10b981", "#f59e0b", "#ef4444"],
+        borderWidth: 2,
+      },
+    ],
   };
 
   const performanceData = {
     labels: aggregated?.map((r) => r.monthLabel) || [],
-    datasets: [{
-      label: "📈 مستوى الأداء",
-      data: aggregated?.map((r) => r.perf) || [],
-      borderColor: "#f59e0b",
-      backgroundColor: "rgba(245, 158, 11, 0.1)",
-      tension: 0.4,
-      fill: true,
-    }],
+    datasets: [
+      {
+        label: "📈 مستوى الأداء",
+        data: aggregated?.map((r) => r.perf) || [],
+        borderColor: "#f59e0b",
+        backgroundColor: "rgba(245, 158, 11, 0.1)",
+        tension: 0.4,
+        fill: true,
+      },
+    ],
   };
 
   // UI settings
@@ -1041,12 +1162,12 @@ export default function HRDashboard() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 mb-6">
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold text-orange-400">
-              {selectedHR === "all" 
-                ? "لوحة تحليلات الموارد البشرية - البيانات الفعلية" 
+              {selectedHR === "all"
+                ? "لوحة تحليلات الموارد البشرية - البيانات الفعلية"
                 : `أداء ${hrTeam.find((h) => h.id === selectedHR)?.name}`}
             </h1>
             <p className="text-xs text-gray-400 mt-1">
-              {selectedHR === "all" 
+              {selectedHR === "all"
                 ? `البيانات الفعلية - ${realStats.totalEmployees} موظف - ${realStats.filteredEmployees.length} بعد التصفية`
                 : "عرض توضيحي لأداء فردي"}
             </p>
@@ -1111,8 +1232,12 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-gradient-to-br from-[#0f0f0f] to-[#131313] border border-orange-600`}
           >
             <div className="text-xs text-gray-400">👥 إجمالي الموظفين</div>
-            <div className="text-lg font-bold text-orange-300">{realStats.totalEmployees}</div>
-            <div className="text-xs text-orange-500 mt-1">{realStats.filteredEmployees.length} بعد التصفية</div>
+            <div className="text-lg font-bold text-orange-300">
+              {realStats.totalEmployees}
+            </div>
+            <div className="text-xs text-orange-500 mt-1">
+              {realStats.filteredEmployees.length} بعد التصفية
+            </div>
           </motion.div>
 
           <motion.div
@@ -1122,8 +1247,12 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-green-600`}
           >
             <div className="text-xs text-gray-400">✅ عقود سارية</div>
-            <div className="text-lg font-bold text-green-400">{realStats.activeContracts}</div>
-            <div className="text-xs text-green-500 mt-1">{realStats.contractsExpiringSoon} تنتهي قريباً</div>
+            <div className="text-lg font-bold text-green-400">
+              {realStats.activeContracts}
+            </div>
+            <div className="text-xs text-green-500 mt-1">
+              {realStats.contractsExpiringSoon} تنتهي قريباً
+            </div>
           </motion.div>
 
           <motion.div
@@ -1133,8 +1262,13 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-blue-600`}
           >
             <div className="text-xs text-gray-400">🇸🇦 سعوديين</div>
-            <div className="text-lg font-bold text-blue-300">{realStats.saudi}</div>
-            <div className="text-xs text-blue-500 mt-1">{Math.round((realStats.saudi / realStats.totalEmployees) * 100)}% توطين</div>
+            <div className="text-lg font-bold text-blue-300">
+              {realStats.saudi}
+            </div>
+            <div className="text-xs text-blue-500 mt-1">
+              {Math.round((realStats.saudi / realStats.totalEmployees) * 100)}%
+              توطين
+            </div>
           </motion.div>
 
           <motion.div
@@ -1144,8 +1278,12 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-purple-600`}
           >
             <div className="text-xs text-gray-400">🚛 سائقين</div>
-            <div className="text-lg font-bold text-purple-300">{realStats.drivers}</div>
-            <div className="text-xs text-purple-500 mt-1">{realStats.driversWithCards} برخصة قيادة</div>
+            <div className="text-lg font-bold text-purple-300">
+              {realStats.drivers}
+            </div>
+            <div className="text-xs text-purple-500 mt-1">
+              {realStats.driversWithCards} برخصة قيادة
+            </div>
           </motion.div>
 
           <motion.div
@@ -1155,8 +1293,12 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-yellow-600`}
           >
             <div className="text-xs text-gray-400">💰 متوسط الراتب</div>
-            <div className="text-lg font-bold text-yellow-300">{realStats.avgActualSalary} ر.س</div>
-            <div className="text-xs text-yellow-500 mt-1">فعلي / {realStats.avgContractSalary} عقد</div>
+            <div className="text-lg font-bold text-yellow-300">
+              {realStats.avgActualSalary} ر.س
+            </div>
+            <div className="text-xs text-yellow-500 mt-1">
+              فعلي / {realStats.avgContractSalary} عقد
+            </div>
           </motion.div>
 
           <motion.div
@@ -1166,7 +1308,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-red-600`}
           >
             <div className="text-xs text-gray-400">⏳ إقامات تنتهي</div>
-            <div className="text-lg font-bold text-red-300">{realStats.iqamaExpiringSoon}</div>
+            <div className="text-lg font-bold text-red-300">
+              {realStats.iqamaExpiringSoon}
+            </div>
             <div className="text-xs text-red-500 mt-1">خلال 90 يوم</div>
           </motion.div>
         </div>
@@ -1180,7 +1324,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-cyan-600`}
           >
             <div className="text-xs text-gray-400">🏦 البنوك</div>
-            <div className="text-lg font-bold text-cyan-300">{Object.keys(realStats.bankCounts).length}</div>
+            <div className="text-lg font-bold text-cyan-300">
+              {Object.keys(realStats.bankCounts).length}
+            </div>
             <div className="text-xs text-cyan-500 mt-1">مؤسسة مالية</div>
           </motion.div>
 
@@ -1191,7 +1337,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-emerald-600`}
           >
             <div className="text-xs text-gray-400">🏠 بدل السكن</div>
-            <div className="text-lg font-bold text-emerald-300">{realStats.totalHousingAllowance} ر.س</div>
+            <div className="text-lg font-bold text-emerald-300">
+              {realStats.totalHousingAllowance} ر.س
+            </div>
             <div className="text-xs text-emerald-500 mt-1">إجمالي</div>
           </motion.div>
 
@@ -1202,7 +1350,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-violet-600`}
           >
             <div className="text-xs text-gray-400">🚗 بدل مواصلات</div>
-            <div className="text-lg font-bold text-violet-300">{realStats.totalTransportAllowance} ر.س</div>
+            <div className="text-lg font-bold text-violet-300">
+              {realStats.totalTransportAllowance} ر.س
+            </div>
             <div className="text-xs text-violet-500 mt-1">إجمالي</div>
           </motion.div>
 
@@ -1213,7 +1363,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-rose-600`}
           >
             <div className="text-xs text-gray-400">📊 الموائمين</div>
-            <div className="text-lg font-bold text-rose-300">{realStats.coordinators}</div>
+            <div className="text-lg font-bold text-rose-300">
+              {realStats.coordinators}
+            </div>
             <div className="text-xs text-rose-500 mt-1">فريق التنسيق</div>
           </motion.div>
 
@@ -1224,7 +1376,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-lime-600`}
           >
             <div className="text-xs text-gray-400">📞 خدمة عملاء</div>
-            <div className="text-lg font-bold text-lime-300">{realStats.customerService}</div>
+            <div className="text-lg font-bold text-lime-300">
+              {realStats.customerService}
+            </div>
             <div className="text-xs text-lime-500 mt-1">فريق الدعم</div>
           </motion.div>
 
@@ -1235,7 +1389,9 @@ export default function HRDashboard() {
             className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-amber-600`}
           >
             <div className="text-xs text-gray-400">🎫 رخص قيادة</div>
-            <div className="text-lg font-bold text-amber-300">{realStats.driverCardsExpiringSoon}</div>
+            <div className="text-lg font-bold text-amber-300">
+              {realStats.driverCardsExpiringSoon}
+            </div>
             <div className="text-xs text-amber-500 mt-1">تنتهي قريباً</div>
           </motion.div>
         </div>
@@ -1249,7 +1405,9 @@ export default function HRDashboard() {
               animate={{ opacity: 1, x: 0 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-72`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">📊 توزيع الجنسيات</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                📊 توزيع الجنسيات
+              </h3>
               <div className="h-52">
                 <Pie data={nationalityData} options={commonOptions} />
               </div>
@@ -1261,7 +1419,9 @@ export default function HRDashboard() {
               transition={{ delay: 0.1 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">👨‍💼 التوزيع الوظيفي</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                👨‍💼 التوزيع الوظيفي
+              </h3>
               <div className="h-44">
                 <Doughnut data={jobTitleData} options={commonOptions} />
               </div>
@@ -1273,7 +1433,9 @@ export default function HRDashboard() {
               transition={{ delay: 0.2 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">🏦 توزيع البنوك</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                🏦 توزيع البنوك
+              </h3>
               <div className="h-44">
                 <Doughnut data={bankDistributionData} options={commonOptions} />
               </div>
@@ -1288,7 +1450,9 @@ export default function HRDashboard() {
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-72`}
             >
               <h3 className="text-sm font-semibold text-orange-300 mb-3">
-                {selectedHR === "all" ? "📈 التعيينات والاستقالات" : "📈 أداء التعيينات"}
+                {selectedHR === "all"
+                  ? "📈 التعيينات والاستقالات"
+                  : "📈 أداء التعيينات"}
               </h3>
               <div className="h-52">
                 <Line data={lineData} options={commonOptions} />
@@ -1302,7 +1466,9 @@ export default function HRDashboard() {
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-72`}
             >
               <h3 className="text-sm font-semibold text-orange-300 mb-3">
-                {selectedHR === "all" ? "⚡ المهام والتدريبات" : "📊 المهام والتدريبات"}
+                {selectedHR === "all"
+                  ? "⚡ المهام والتدريبات"
+                  : "📊 المهام والتدريبات"}
               </h3>
               <div className="h-52">
                 <Bar data={barData} options={commonOptions} />
@@ -1315,7 +1481,9 @@ export default function HRDashboard() {
               transition={{ delay: 0.2 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">💰 مقارنة الرواتب</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                💰 مقارنة الرواتب
+              </h3>
               <div className="h-44">
                 <Bar data={salaryComparisonData} options={commonOptions} />
               </div>
@@ -1329,7 +1497,9 @@ export default function HRDashboard() {
               animate={{ opacity: 1, x: 0 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">📈 تطور الأداء</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                📈 تطور الأداء
+              </h3>
               <div className="h-44">
                 <Line data={performanceData} options={commonOptions} />
               </div>
@@ -1341,7 +1511,9 @@ export default function HRDashboard() {
               transition={{ delay: 0.1 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">📝 حالة العقود</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                📝 حالة العقود
+              </h3>
               <div className="h-44">
                 <Pie data={contractStatusData} options={commonOptions} />
               </div>
@@ -1353,7 +1525,9 @@ export default function HRDashboard() {
               transition={{ delay: 0.2 }}
               className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800 h-64`}
             >
-              <h3 className="text-sm font-semibold text-orange-300 mb-3">🏠 البدلات والمكافآت</h3>
+              <h3 className="text-sm font-semibold text-orange-300 mb-3">
+                🏠 البدلات والمكافآت
+              </h3>
               <div className="h-44">
                 <Pie data={allowanceData} options={commonOptions} />
               </div>
@@ -1367,74 +1541,131 @@ export default function HRDashboard() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-4"
         >
-          <div className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}>
-            <h3 className="text-sm font-semibold text-orange-300 mb-3">🎯 ملاحظات وتوصيات</h3>
+          <div
+            className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}
+          >
+            <h3 className="text-sm font-semibold text-orange-300 mb-3">
+              🎯 ملاحظات وتوصيات
+            </h3>
             <div className="text-xs text-gray-300 space-y-2">
               <div className="p-2 bg-green-500/10 rounded border border-green-500/30">
                 <strong>✅ إيجابيات:</strong>
-                <div className="mt-1">• نسبة التوطين {Math.round((realStats.saudi / realStats.totalEmployees) * 100)}% جيدة للشركة الناشئة</div>
+                <div className="mt-1">
+                  • نسبة التوطين{" "}
+                  {Math.round(
+                    (realStats.saudi / realStats.totalEmployees) * 100
+                  )}
+                  % جيدة للشركة الناشئة
+                </div>
                 <div>• {realStats.drivers} سائق يشكلون قاعدة تشغيلية قوية</div>
-                <div>• تنوع في المؤهلات والمهن ({Object.keys(realStats.professionCounts).length} تخصص)</div>
+                <div>
+                  • تنوع في المؤهلات والمهن (
+                  {Object.keys(realStats.professionCounts).length} تخصص)
+                </div>
               </div>
 
               <div className="p-2 bg-yellow-500/10 rounded border border-yellow-500/30">
                 <strong>💡 تحسينات:</strong>
-                <div className="mt-1">• متابعة {realStats.contractsExpiringSoon} عقد سينتهي قريباً</div>
-                <div>• تجديد {realStats.iqamaExpiringSoon} إقامة خلال 90 يوم</div>
+                <div className="mt-1">
+                  • متابعة {realStats.contractsExpiringSoon} عقد سينتهي قريباً
+                </div>
+                <div>
+                  • تجديد {realStats.iqamaExpiringSoon} إقامة خلال 90 يوم
+                </div>
                 <div>• تطوير برامج تدريبية للموائمين وخدمة العملاء</div>
               </div>
 
               <div className="p-2 bg-blue-500/10 rounded border border-blue-500/30">
                 <strong>📊 تحليل مالي:</strong>
-                <div className="mt-1">• إجمالي كشوف المرتبات: {realStats.totalActualSalary.toLocaleString()} ر.س</div>
-                <div>• متوسط الراتب: {realStats.avgActualSalary} ر.س (فعلي) / {realStats.avgContractSalary} ر.س (عقد)</div>
-                <div>• إجمالي البدلات: {(realStats.totalHousingAllowance + realStats.totalTransportAllowance + realStats.totalOtherAllowance).toLocaleString()} ر.س</div>
+                <div className="mt-1">
+                  • إجمالي كشوف المرتبات:{" "}
+                  {realStats.totalActualSalary.toLocaleString()} ر.س
+                </div>
+                <div>
+                  • متوسط الراتب: {realStats.avgActualSalary} ر.س (فعلي) /{" "}
+                  {realStats.avgContractSalary} ر.س (عقد)
+                </div>
+                <div>
+                  • إجمالي البدلات:{" "}
+                  {(
+                    realStats.totalHousingAllowance +
+                    realStats.totalTransportAllowance +
+                    realStats.totalOtherAllowance
+                  ).toLocaleString()}{" "}
+                  ر.س
+                </div>
               </div>
             </div>
           </div>
 
-          <div className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}>
-            <h3 className="text-sm font-semibold text-orange-300 mb-3">📋 تحليل الفريق التفصيلي</h3>
+          <div
+            className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}
+          >
+            <h3 className="text-sm font-semibold text-orange-300 mb-3">
+              📋 تحليل الفريق التفصيلي
+            </h3>
             <div className="text-xs text-gray-300 space-y-3">
               <div>
                 <strong>فريق الإدارة ({realStats.management})</strong>
-                <div className="text-gray-400 mt-1">قيادة وتخطيط استراتيجي - رواتب تتراوح بين 6,000 إلى 50,000 ر.س</div>
+                <div className="text-gray-400 mt-1">
+                  قيادة وتخطيط استراتيجي - رواتب تتراوح بين 6,000 إلى 50,000 ر.س
+                </div>
               </div>
 
               <div>
                 <strong>فريق السائقين ({realStats.drivers})</strong>
-                <div className="text-gray-400 mt-1">العمليات والنشاط التشغيلي - راتب موحد 2,000 ر.س + بدل سكن 500 ر.س</div>
-                <div className="text-gray-500 text-xs mt-1">• {realStats.driversWithCards} لديهم رخص قيادة سارية</div>
-                <div className="text-gray-500 text-xs">• {realStats.driverCardsExpiringSoon} رخصة تنتهي قريباً</div>
+                <div className="text-gray-400 mt-1">
+                  العمليات والنشاط التشغيلي - راتب موحد 2,000 ر.س + بدل سكن 500
+                  ر.س
+                </div>
+                <div className="text-gray-500 text-xs mt-1">
+                  • {realStats.driversWithCards} لديهم رخص قيادة سارية
+                </div>
+                <div className="text-gray-500 text-xs">
+                  • {realStats.driverCardsExpiringSoon} رخصة تنتهي قريباً
+                </div>
               </div>
 
               <div>
                 <strong>فريق الموائمين ({realStats.coordinators})</strong>
-                <div className="text-gray-400 mt-1">التنسيق والدعم الإداري - رواتب تتراوح بين 3,560 إلى 4,000 ر.س</div>
+                <div className="text-gray-400 mt-1">
+                  التنسيق والدعم الإداري - رواتب تتراوح بين 3,560 إلى 4,000 ر.س
+                </div>
               </div>
 
               <div>
                 <strong>فريق خدمة العملاء ({realStats.customerService})</strong>
-                <div className="text-gray-400 mt-1">الدعم والتفاعل مع العملاء - رواتب 1,200 ر.س (فعلي) / 4,000 ر.س (عقد)</div>
+                <div className="text-gray-400 mt-1">
+                  الدعم والتفاعل مع العملاء - رواتب 1,200 ر.س (فعلي) / 4,000 ر.س
+                  (عقد)
+                </div>
               </div>
 
               <div className="mt-4 p-2 bg-purple-500/10 rounded border border-purple-500/30">
                 <strong>📈 مؤشرات الأداء:</strong>
                 <div className="grid grid-cols-2 gap-2 mt-2">
                   <div className="text-center">
-                    <div className="text-lg font-bold text-green-400">{realStats.activeContracts}</div>
+                    <div className="text-lg font-bold text-green-400">
+                      {realStats.activeContracts}
+                    </div>
                     <div className="text-xs text-gray-400">عقد نشط</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-blue-400">{realStats.avgActualSalary}</div>
+                    <div className="text-lg font-bold text-blue-400">
+                      {realStats.avgActualSalary}
+                    </div>
                     <div className="text-xs text-gray-400">متوسط الراتب</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-orange-400">{realStats.saudi}</div>
+                    <div className="text-lg font-bold text-orange-400">
+                      {realStats.saudi}
+                    </div>
                     <div className="text-xs text-gray-400">موظف سعودي</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-lg font-bold text-purple-400">{Object.keys(realStats.bankCounts).length}</div>
+                    <div className="text-lg font-bold text-purple-400">
+                      {Object.keys(realStats.bankCounts).length}
+                    </div>
                     <div className="text-xs text-gray-400">بنك مختلف</div>
                   </div>
                 </div>
@@ -1449,8 +1680,12 @@ export default function HRDashboard() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-6"
         >
-          <div className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}>
-            <h3 className="text-sm font-semibold text-orange-300 mb-3">📋 قائمة الموظفين المفصلة</h3>
+          <div
+            className={`${cardPadding} ${cardRadius} bg-[#0f0f0f] border border-gray-800`}
+          >
+            <h3 className="text-sm font-semibold text-orange-300 mb-3">
+              📋 قائمة الموظفين المفصلة
+            </h3>
             <div className="overflow-x-auto">
               <table className="min-w-full text-xs">
                 <thead>
@@ -1466,24 +1701,47 @@ export default function HRDashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {realStats.filteredEmployees.slice(0, 10).map((emp, index) => (
-                    <tr key={emp.id} className={`border-b border-gray-800 ${index % 2 === 0 ? 'bg-gray-900/30' : ''}`}>
-                      <td className="p-2">{emp.name}</td>
-                      <td className="p-2">{emp.nationality}</td>
-                      <td className="p-2">{emp.jobTitle}</td>
-                      <td className="p-2 text-green-300">{emp.actualSalary.toLocaleString()} ر.س</td>
-                      <td className="p-2 text-blue-300">{emp.contractSalary.toLocaleString()} ر.س</td>
-                      <td className="p-2 text-yellow-300">{emp.housingAllowance.toLocaleString()} ر.س</td>
-                      <td className="p-2">
-                        <span className={`px-2 py-1 rounded text-xs ${
-                          emp.contractStatus === "ساري" ? "bg-green-600 text-white" : "bg-red-600 text-white"
-                        }`}>
-                          {emp.contractStatus}
-                        </span>
-                      </td>
-                      <td className="p-2">{emp.contractEnd ? new Date(emp.contractEnd).toLocaleDateString('ar-SA') : 'غير محدد'}</td>
-                    </tr>
-                  ))}
+                  {realStats.filteredEmployees
+                    .slice(0, 10)
+                    .map((emp, index) => (
+                      <tr
+                        key={emp.id}
+                        className={`border-b border-gray-800 ${
+                          index % 2 === 0 ? "bg-gray-900/30" : ""
+                        }`}
+                      >
+                        <td className="p-2">{emp.name}</td>
+                        <td className="p-2">{emp.nationality}</td>
+                        <td className="p-2">{emp.jobTitle}</td>
+                        <td className="p-2 text-green-300">
+                          {emp.actualSalary.toLocaleString()} ر.س
+                        </td>
+                        <td className="p-2 text-blue-300">
+                          {emp.contractSalary.toLocaleString()} ر.س
+                        </td>
+                        <td className="p-2 text-yellow-300">
+                          {emp.housingAllowance.toLocaleString()} ر.س
+                        </td>
+                        <td className="p-2">
+                          <span
+                            className={`px-2 py-1 rounded text-xs ${
+                              emp.contractStatus === "ساري"
+                                ? "bg-green-600 text-white"
+                                : "bg-red-600 text-white"
+                            }`}
+                          >
+                            {emp.contractStatus}
+                          </span>
+                        </td>
+                        <td className="p-2">
+                          {emp.contractEnd
+                            ? new Date(emp.contractEnd).toLocaleDateString(
+                                "ar-SA"
+                              )
+                            : "غير محدد"}
+                        </td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>
