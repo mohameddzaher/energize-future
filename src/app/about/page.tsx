@@ -1,17 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { 
-  FaSchool, 
-  FaTruckMoving, 
-  FaUsers, 
-  FaBaby, 
-  FaGlobeAmericas, 
-  FaRocket, 
-  FaHandshake, 
-  FaLeaf, 
-  FaHeart, 
-  FaBuilding, 
+import {
+  FaSchool,
+  FaTruckMoving,
+  FaUsers,
+  FaBaby,
+  FaGlobeAmericas,
+  FaRocket,
+  FaHandshake,
+  FaLeaf,
+  FaHeart,
   FaHardHat,
   FaAward,
   FaChartLine,
@@ -25,7 +24,8 @@ import {
   FaHandHoldingHeart,
   FaLightbulb,
   FaCogs,
-  FaRibbon
+  FaRibbon,
+  FaBullhorn
 } from 'react-icons/fa'
 
 export default function AboutPage() {
@@ -66,7 +66,7 @@ export default function AboutPage() {
   }
 
   const stats = [
-    { icon: <FaBuilding />, number: '15+', label: 'Projects', suffix: '' },
+    { icon: <FaBullhorn />, number: '50+', label: 'Campaigns', suffix: '' },
     { icon: <FaUsers />, number: '360', label: 'Employees', suffix: '+' },
     { icon: <FaSchool />, number: '3', label: 'Schools', suffix: '' },
     { icon: <FaTruckMoving />, number: '34', label: 'Trucks', suffix: '+' },
@@ -184,11 +184,11 @@ export default function AboutPage() {
       description: 'Commence construction and operational setup',
       achievements: ['Construction Start', 'Fleet Acquisition']
     },
-    { 
-      year: 'Q3 2025', 
-      title: 'Expansion', 
-      description: 'Launch real estate division and scale operations',
-      achievements: ['Real Estate Launch', 'Team Growth']
+    {
+      year: 'Q3 2025',
+      title: 'Expansion',
+      description: 'Launch Marketing & Influencers division and scale operations',
+      achievements: ['Marketing & Influencers Launch', 'Team Growth']
     },
     { 
       year: 'Q4 2025', 
@@ -246,7 +246,7 @@ export default function AboutPage() {
                 Energize Future Group combines <span className="text-[#f37121] font-medium">international education</span>,{' '}
                 <span className="text-[#f37121] font-medium">premium childcare</span>,{' '}
                 <span className="text-[#f37121] font-medium">advanced logistics</span>, and{' '}
-                <span className="text-[#f37121] font-medium">real estate development</span> - 
+                <span className="text-[#f37121] font-medium">marketing & influencer services</span> -
                 building a smarter future for Saudi Arabia.
               </p>
             </div>
@@ -436,13 +436,13 @@ export default function AboutPage() {
                 color: 'from-green-500 to-emerald-500',
                 stats: '34+ Trucks'
               },
-              { 
-                icon: <FaBuilding />, 
-                title: 'Real Estate', 
-                desc: 'Premium developments with sustainable practices',
-                features: ['Residential', 'Commercial', 'Quality Craftsmanship'],
+              {
+                icon: <FaBullhorn />,
+                title: 'Marketing & Influencers',
+                desc: 'Performance marketing and influencer partnerships that grow brands',
+                features: ['Influencer Management', 'Paid Ads', 'Content Creation'],
                 color: 'from-purple-500 to-indigo-500',
-                stats: '15+ Projects'
+                stats: '50+ Campaigns'
               },
             ].map((division, index) => (
               <motion.div

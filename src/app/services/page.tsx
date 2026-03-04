@@ -263,13 +263,13 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { 
-  FaSchool, 
-  FaBaby, 
-  FaTruckMoving, 
-  FaUsers, 
-  FaChartLine, 
-  FaShieldAlt, 
+import {
+  FaSchool,
+  FaBaby,
+  FaTruckMoving,
+  FaUsers,
+  FaChartLine,
+  FaShieldAlt,
   FaHandshake,
   FaRocket,
   FaGraduationCap,
@@ -277,7 +277,7 @@ import {
   FaCogs,
   FaHeadset,
   FaArrowRight,
-  FaBuilding
+  FaBullhorn
 } from 'react-icons/fa'
 
 export default function ServicesPage() {
@@ -319,13 +319,13 @@ export default function ServicesPage() {
       link: "/divisions/transport-logistics"
     },
     {
-      icon: <FaBuilding className="text-lg" />,
-      title: "Real Estate & Construction",
-      description: "Premium residential and commercial developments with quality craftsmanship and sustainable design.",
-      features: ["Residential Complexes", "Commercial Spaces", "Quality Construction", "Timely Delivery"],
+      icon: <FaBullhorn className="text-lg" />,
+      title: "Marketing & Influencers Agency",
+      description: "We help brands grow through performance marketing, influencer partnerships, content creation, and measurable social media strategies.",
+      features: ["Influencer Management", "Paid Ads (Meta/TikTok)", "Content Creation", "Campaign Analytics"],
       color: "from-purple-500/20 to-indigo-500/20",
       borderColor: "border-purple-500/30",
-      link: "/divisions/real-estate"
+      link: "/divisions/marketing-influencers"
     },
     {
       icon: <FaHandshake className="text-lg" />,
@@ -351,7 +351,7 @@ export default function ServicesPage() {
     { number: "3", label: "School Campuses", icon: <FaSchool /> },
     { number: "100+", label: "Childcare Capacity", icon: <FaBaby /> },
     { number: "34", label: "Truck Fleet", icon: <FaTruckMoving /> },
-    { number: "15+", label: "Real Estate Projects", icon: <FaBuilding /> },
+    { number: "50+", label: "Influencer Campaigns", icon: <FaBullhorn /> },
     { number: "360+", label: "Employees", icon: <FaUsers /> }
   ]
 
@@ -377,7 +377,7 @@ export default function ServicesPage() {
             variants={reveal} 
             className="text-gray-400 text-sm max-w-2xl mx-auto"
           >
-            Comprehensive solutions in education, childcare, logistics, and real estate designed to meet 
+            Comprehensive solutions in education, childcare, logistics, and marketing & influencer services designed to meet
             the evolving needs of Saudi families and businesses while supporting Vision 2030 objectives.
           </motion.p>
         </section>
@@ -420,7 +420,7 @@ export default function ServicesPage() {
               variants={reveal}
               className="text-gray-400 text-sm"
             >
-              Four integrated pillars working together to build a better future
+              Four integrated divisions working together to build a better future
             </motion.p>
           </div>
 

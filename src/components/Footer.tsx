@@ -191,7 +191,7 @@ export default function Footer() {
     { name: 'EFG International Schools', href: '/divisions/international-schools' },
     { name: 'EFG Childcare Centers', href: '/divisions/childcare' },
     { name: 'Heavy Transport & Logistics', href: '/divisions/transport-logistics' },
-    { name: 'Real Estate & Construction', href: '/divisions/real-estate' }
+    { name: 'Marketing & Influencers Agency', href: '/divisions/marketing-influencers' }
   ]
 
   const contactInfo = [
@@ -235,7 +235,7 @@ export default function Footer() {
             </div>
             
             <p className="text-xs text-gray-400 leading-relaxed">
-              Building a better future through integrated education, childcare, logistics, and real estate solutions aligned with Saudi Vision 2030.
+              Building a better future through integrated education, childcare, logistics, and marketing & influencer solutions aligned with Saudi Vision 2030.
             </p>
             
             <div className="flex gap-2">

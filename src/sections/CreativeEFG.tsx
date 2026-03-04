@@ -531,7 +531,7 @@
 //             >
 //               <div className="text-base font-bold text-[#f37121]">Q3 2025</div>
 //               <div className="text-gray-400 text-xs mt-1">
-//                 Launch real estate division
+//                 Launch Marketing & Influencers division
 //               </div>
 //               <div className="mt-2 h-1 w-10 bg-[#f37121] rounded-full mx-auto"></div>
 //             </motion.div>
@@ -590,7 +590,7 @@
 //               </li>
 //               <li className="flex items-start gap-2">
 //                 <div className="w-1.5 h-1.5 rounded-full bg-[#f37121] mt-1.5 flex-shrink-0"></div>
-//                 <span>Real Estate growth: 7.5% CAGR</span>
+//                 <span>Influencer Marketing growth: 35% CAGR</span>
 //               </li>
 //             </ul>
 //           </motion.div>
@@ -621,7 +621,7 @@
 //               </li>
 //               <li className="flex items-start gap-2">
 //                 <div className="w-1.5 h-1.5 rounded-full bg-[#f37121] mt-1.5 flex-shrink-0"></div>
-//                 <span>Premium real estate development</span>
+//                 <span>Influencer campaigns & brand growth</span>
 //               </li>
 //             </ul>
 //           </motion.div>
@@ -1238,6 +1238,8 @@ import {
   FaBuilding,
   FaHome,
   FaHardHat,
+  FaBullhorn,
+  FaHashtag,
 } from "react-icons/fa";
 
 export default function CreativeEFG() {
@@ -1348,7 +1350,7 @@ export default function CreativeEFG() {
                 </h3>
                 <p className="text-gray-300 text-xs mt-1">
                   Committed to excellence in education, childcare, logistics,
-                  and real estate
+                  and marketing & influencer services
                 </p>
               </div>
             </div>
@@ -1361,8 +1363,8 @@ export default function CreativeEFG() {
             { icon: <FaSchool />, label: "Education" },
             { icon: <FaBaby />, label: "Childcare" },
             { icon: <FaTruckMoving />, label: "Logistics" },
-            { icon: <FaBuilding />, label: "Real Estate" },
-            { icon: <FaHardHat />, label: "Construction" },
+            { icon: <FaBullhorn />, label: "Marketing" },
+            { icon: <FaHashtag />, label: "Influencers" },
             { icon: <FaLeaf />, label: "Sustainability" },
             { icon: <FaHandshake />, label: "Partnerships" },
             { icon: <FaCertificate />, label: "Quality & Compliance" },
@@ -1408,9 +1410,9 @@ export default function CreativeEFG() {
               suffix: "+",
             },
             {
-              label: "Projects",
+              label: "Campaigns",
               value: counters.projects,
-              icon: <FaBuilding />,
+              icon: <FaBullhorn />,
               suffix: "+",
             },
           ].map((s, i) => (
@@ -1478,36 +1480,36 @@ export default function CreativeEFG() {
               </Link>
             </div>
 
-            {/* card 4 - REAL ESTATE */}
+            {/* card 4 - MARKETING & INFLUENCERS */}
             <div className="bg-gradient-to-b from-white/5 to-transparent rounded-xl p-4 shadow-lg border border-white/10 hover:border-[#f37121]/30 transition-all">
               <div className="flex flex-col gap-3 items-start">
                 <div className="w-full h-30 rounded-lg overflow-hidden border border-white/10 shadow">
                   <img
-                    src="/images/ew.jpeg"
-                    alt="real estate"
+                    src="https://i.pinimg.com/1200x/78/bf/85/78bf8595a192b256854073f2ec9d279a.jpg"
+                    alt="marketing influencers"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-[#f37121]">
-                    Real Estate & Construction
+                    Marketing & Influencers Agency
                   </h3>
                   <p className="text-gray-300 text-xs mt-1">
-                    Premium residential and commercial developments with quality
-                    craftsmanship, timely delivery, and innovative design.
+                    We help brands grow through performance marketing, influencer partnerships,
+                    content creation, and measurable social media strategies.
                   </p>
                   <div className="flex flex-wrap gap-1 mt-3 text-xs">
                     <span className="bg-[#f37121]/20 text-[#f37121] px-2 py-1 rounded-full">
-                      Development
+                      Influencers
                     </span>
                     <span className="bg-[#f37121]/20 text-[#f37121] px-2 py-1 rounded-full">
-                      Construction
+                      Paid Ads
                     </span>
                   </div>
                 </div>
               </div>
               <Link
-                href="/divisions/real-estate"
+                href="/divisions/marketing-influencers"
                 className="mt-4 w-full py-1.5 rounded-lg bg-white/5 hover:bg-white/10 transition-colors text-xs flex items-center justify-center gap-1"
               >
                 Learn More <FaArrowRight className="text-xs" />
@@ -1599,8 +1601,8 @@ export default function CreativeEFG() {
             </div>
             <p className="text-gray-300 text-sm">
               Shape a future where families thrive through accessible education,
-              quality childcare, dependable logistics, and premium real estate
-              solutions that support national growth.
+              quality childcare, dependable logistics, and impactful marketing
+              & influencer services that support national growth.
             </p>
             <div className="mt-4 p-3 bg-white/5 rounded-lg">
               <p className="text-xs text-gray-400">
@@ -1620,7 +1622,7 @@ export default function CreativeEFG() {
             <p className="text-gray-300 text-sm">
               Deliver meaningful services that enrich lives, inspire growth, and
               build trust through innovation, safety, operational excellence,
-              and quality construction.
+              and content & influencer excellence.
             </p>
             <div className="mt-4 p-3 bg-white/5 rounded-lg">
               <p className="text-xs text-gray-400">
@@ -1658,7 +1660,7 @@ export default function CreativeEFG() {
             <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-4 rounded-lg text-center border border-white/10 shadow">
               <div className="text-base font-bold text-[#f37121]">Q3 2025</div>
               <div className="text-gray-400 text-xs mt-1">
-                Launch real estate division
+                Launch Marketing & Influencers division
               </div>
               <div className="mt-2 h-1 w-10 bg-[#f37121] rounded-full mx-auto"></div>
             </div>
@@ -1703,7 +1705,7 @@ export default function CreativeEFG() {
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#f37121] mt-1.5 flex-shrink-0"></div>
-                <span>Real Estate growth: 7.5% CAGR</span>
+                <span>Influencer Marketing growth: 35% CAGR</span>
               </li>
             </ul>
           </div>
@@ -1730,84 +1732,84 @@ export default function CreativeEFG() {
               </li>
               <li className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-[#f37121] mt-1.5 flex-shrink-0"></div>
-                <span>Premium real estate development</span>
+                <span>Influencer campaigns & brand growth</span>
               </li>
             </ul>
           </div>
         </section>
 
-        {/* REAL ESTATE FOCUS SECTION */}
+        {/* MARKETING & INFLUENCERS FOCUS SECTION */}
         <section className="grid md:grid-cols-2 gap-6 items-start">
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 p-4 rounded-xl border border-white/10 shadow">
             <div className="flex items-center gap-2 mb-3">
-              <FaBuilding className="text-lg text-[#f37121]" />
+              <FaBullhorn className="text-lg text-[#f37121]" />
               <h4 className="text-lg font-bold text-[#f37121]">
-                Real Estate & Construction Division
+                Marketing & Influencers Agency
               </h4>
             </div>
             <p className="text-gray-300 text-sm mb-4">
-              EFG Properties delivers premium residential and commercial
-              developments with uncompromising quality and innovative design.
+              EFG Marketing & Influencers Agency helps brands grow through performance marketing,
+              influencer partnerships, content creation, and measurable social media strategies.
             </p>
 
             <div className="grid grid-cols-2 gap-3 mb-4">
               <div className="bg-white/5 p-3 rounded-lg">
                 <div className="text-base font-bold text-[#f37121]">
-                  Residential
+                  Influencers
                 </div>
                 <p className="text-gray-400 text-xs mt-1">
-                  Luxury apartments & villas
+                  Sourcing & management
                 </p>
               </div>
               <div className="bg-white/5 p-3 rounded-lg">
                 <div className="text-base font-bold text-[#f37121]">
-                  Commercial
+                  Paid Ads
                 </div>
                 <p className="text-gray-400 text-xs mt-1">
-                  Office & retail spaces
+                  Meta / TikTok / Snapchat
                 </p>
               </div>
               <div className="bg-white/5 p-3 rounded-lg">
                 <div className="text-base font-bold text-[#f37121]">
-                  Construction
+                  Content
                 </div>
-                <p className="text-gray-400 text-xs mt-1">Turnkey projects</p>
+                <p className="text-gray-400 text-xs mt-1">Reels & video production</p>
               </div>
               <div className="bg-white/5 p-3 rounded-lg">
                 <div className="text-base font-bold text-[#f37121]">
-                  Consultancy
+                  Analytics
                 </div>
-                <p className="text-gray-400 text-xs mt-1">Project management</p>
+                <p className="text-gray-400 text-xs mt-1">KPIs, ROI & reporting</p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-2">
               <span className="bg-[#f37121]/20 text-[#f37121] px-2 py-1 rounded-full text-xs">
-                Quality Craftsmanship
+                Campaign Strategy
               </span>
               <span className="bg-[#f37121]/20 text-[#f37121] px-2 py-1 rounded-full text-xs">
-                Timely Delivery
+                Brand Partnerships
               </span>
               <span className="bg-[#f37121]/20 text-[#f37121] px-2 py-1 rounded-full text-xs">
-                Innovative Design
+                Measurable ROI
               </span>
             </div>
           </div>
 
           <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/60 rounded-xl p-3 flex items-center justify-center h-full border border-white/10 shadow">
-            <div className="relative w-full h-68 rounded-lg overflow-hidden">
-              <img
-                src="/images/ew.jpeg"
-                alt="real estate projects"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
-                <div className="text-white">
-                  <h5 className="font-bold text-sm">Premium Developments</h5>
-                  <p className="text-xs text-gray-300">
-                    Building tomorrows landmarks today
-                  </p>
-                </div>
+            <div className="relative w-full h-68 rounded-lg overflow-hidden bg-gradient-to-br from-[#f37121]/10 to-orange-500/5 flex flex-col items-center justify-center gap-4 p-6">
+              <div className="grid grid-cols-3 gap-3">
+                {[FaBullhorn, FaHashtag, FaUsers, FaChartLine, FaHandshake, FaRocket].map((Icon, i) => (
+                  <div key={i} className="w-12 h-12 rounded-xl bg-[#f37121]/20 flex items-center justify-center text-[#f37121] text-xl">
+                    <Icon />
+                  </div>
+                ))}
+              </div>
+              <div className="text-center text-white">
+                <h5 className="font-bold text-sm">Marketing & Influencers</h5>
+                <p className="text-xs text-gray-300">
+                  Growing brands with measurable impact
+                </p>
               </div>
             </div>
           </div>
@@ -1937,8 +1939,8 @@ export default function CreativeEFG() {
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold text-[#f37121]">Our Gallery</h2>
             <p className="text-gray-400 mt-1 text-sm">
-              Capturing moments from across our divisions including real estate
-              projects
+              Capturing moments from across our divisions including marketing
+              & influencer campaigns
             </p>
           </div>
 
@@ -1970,48 +1972,48 @@ export default function CreativeEFG() {
                 img: "/images/childcare/5.jpeg",
               },
               {
-                title: "Real Estate Projects",
-                desc: "Premium developments",
+                title: "Influencer Campaigns",
+                desc: "Brand collaborations & partnerships",
                 img: "/images/childcare/6.jpeg",
               },
               {
-                title: "Construction Sites",
-                desc: "Quality craftsmanship",
+                title: "Content Creation",
+                desc: "Reels, TikTok & video production",
                 img: "/images/childcare/7.jpeg",
               },
               {
-                title: "Residential Projects",
-                desc: "Luxury apartments & villas",
+                title: "Social Media Strategy",
+                desc: "Monthly content plans & calendars",
                 img: "/images/childcare/8.jpeg",
               },
               {
-                title: "Commercial Spaces",
-                desc: "Office & retail developments",
+                title: "Paid Ads",
+                desc: "Meta, TikTok & Snapchat campaigns",
                 img: "/images/childcare/9.jpeg",
               },
               {
-                title: "Project Management",
-                desc: "Expert supervision",
+                title: "Campaign Analytics",
+                desc: "KPIs, ROI & performance reports",
                 img: "/images/childcare/10.jpeg",
               },
               {
-                title: "Design Innovation",
-                desc: "Creative architectural solutions",
+                title: "Brand Identity",
+                desc: "Creative direction & visual storytelling",
                 img: "/images/childcare/11.jpeg",
               },
               {
-                title: "Quality Control",
-                desc: "Uncompromising standards",
+                title: "Creator Network",
+                desc: "500+ vetted influencers",
                 img: "/images/childcare/12.jpeg",
               },
               {
-                title: "Community Impact",
-                desc: "Building better neighborhoods",
+                title: "Community Growth",
+                desc: "Building engaged audiences",
                 img: "/images/childcare/13.jpeg",
               },
               {
-                title: "Sustainable Construction",
-                desc: "Green building practices",
+                title: "Performance Marketing",
+                desc: "Data-driven growth strategies",
                 img: "/images/childcare/14.jpeg",
               },
             ].map((item, i) => (
@@ -2043,10 +2045,10 @@ export default function CreativeEFG() {
             <div className="space-y-4">
               {[
                 {
-                  icon: "🏗️",
-                  title: "Construction Excellence",
+                  icon: "📣",
+                  title: "Marketing Excellence",
                   description:
-                    "15+ projects delivered with 100% client satisfaction",
+                    "50+ campaigns delivered with 100% client satisfaction",
                 },
                 {
                   icon: "🎓",
@@ -2256,8 +2258,8 @@ export default function CreativeEFG() {
                     <option value="education">Education</option>
                     <option value="childcare">Childcare</option>
                     <option value="logistics">Logistics</option>
-                    <option value="real-estate">
-                      Real Estate & Construction
+                    <option value="marketing-influencers">
+                      Marketing & Influencers
                     </option>
                     <option value="partnership">Partnership</option>
                   </select>

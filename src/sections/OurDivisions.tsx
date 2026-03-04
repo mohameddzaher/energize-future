@@ -66,9 +66,9 @@ const divisions = [
     image: "/images/f.jpeg",
   },
   {
-    title: "Real Estate & Construction Division",
-    description: "EFG Properties delivers premium real estate development and construction services - from residential complexes to commercial projects with quality craftsmanship and timely delivery.",
-    image: "/images/real-estate.jpg",
+    title: "Marketing & Influencers Agency",
+    description: "EFG Marketing & Influencers Agency helps brands grow through performance marketing, influencer partnerships, content creation, campaign management, and measurable social media strategies.",
+    image: "/images/re.jpeg",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function OurDivisions() {
         </h2>
         <p className="text-center text-gray-300 max-w-xl mx-auto mb-12 text-sm md:text-base">
           Energize Future Group is a diversified organization combining excellence
-          in education, logistics, and real estate - building a smarter, more connected future.
+          in education, logistics, and marketing & influencer services - building a smarter, more connected future.
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
