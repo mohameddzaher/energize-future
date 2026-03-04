@@ -25,7 +25,8 @@ import {
   FaLightbulb,
   FaCogs,
   FaRibbon,
-  FaBullhorn
+  FaBullhorn,
+  FaHashtag
 } from 'react-icons/fa'
 
 export default function AboutPage() {
@@ -70,7 +71,8 @@ export default function AboutPage() {
     { icon: <FaUsers />, number: '360', label: 'Employees', suffix: '+' },
     { icon: <FaSchool />, number: '3', label: 'Schools', suffix: '' },
     { icon: <FaTruckMoving />, number: '34', label: 'Trucks', suffix: '+' },
-    { icon: <FaBaby />, number: '100', label: 'Childcare', suffix: '+' },
+    { icon: <FaBaby />, number: '3000', label: 'Students', suffix: '+' },
+    { icon: <FaHashtag />, number: '200', label: 'Influencers', suffix: '+' },
     { icon: <FaCity />, number: '5', label: 'Cities', suffix: '' },
   ]
 
@@ -324,7 +326,7 @@ export default function AboutPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 lg:grid-cols-6 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
             {stats.map((stat, index) => (
               <motion.div
                 key={index}

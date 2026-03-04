@@ -349,9 +349,10 @@ export default function ServicesPage() {
 
   const stats = [
     { number: "3", label: "School Campuses", icon: <FaSchool /> },
-    { number: "100+", label: "Childcare Capacity", icon: <FaBaby /> },
+    { number: "3000+", label: "Students Capacity", icon: <FaBaby /> },
     { number: "34", label: "Truck Fleet", icon: <FaTruckMoving /> },
     { number: "50+", label: "Influencer Campaigns", icon: <FaBullhorn /> },
+    { number: "200+", label: "Influencers", icon: <FaUsers /> },
     { number: "360+", label: "Employees", icon: <FaUsers /> }
   ]
 
@@ -383,7 +384,7 @@ export default function ServicesPage() {
         </section>
 
         {/* STATS */}
-        <section className="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
           {stats.map((stat, index) => (
             <motion.div
               key={index}

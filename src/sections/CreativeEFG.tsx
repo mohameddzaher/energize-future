@@ -1249,15 +1249,17 @@ export default function CreativeEFG() {
     trucks: 0,
     employees: 0,
     projects: 0,
+    influencers: 0,
   });
 
   useEffect(() => {
     const targets = {
       schools: 3,
-      childcare: 100,
+      childcare: 3000,
       trucks: 34,
       employees: 360,
-      projects: 15,
+      projects: 50,
+      influencers: 200,
     };
     const duration = 1200;
     const start = performance.now();
@@ -1269,6 +1271,7 @@ export default function CreativeEFG() {
         trucks: Math.floor(progress * targets.trucks),
         employees: Math.floor(progress * targets.employees),
         projects: Math.floor(progress * targets.projects),
+        influencers: Math.floor(progress * targets.influencers),
       });
       if (progress < 1) requestAnimationFrame(animate);
     };
@@ -1382,7 +1385,7 @@ export default function CreativeEFG() {
         </section>
 
         {/* COUNTERS */}
-        <section className="grid grid-cols-2 md:grid-cols-5 gap-4">
+        <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
           {[
             {
               label: "Schools",
@@ -1391,7 +1394,7 @@ export default function CreativeEFG() {
               suffix: "",
             },
             {
-              label: "Childcare Capacity",
+              label: "Students Capacity",
               value: counters.childcare,
               icon: <FaBaby />,
               suffix: "+",
@@ -1412,6 +1415,12 @@ export default function CreativeEFG() {
               label: "Campaigns",
               value: counters.projects,
               icon: <FaBullhorn />,
+              suffix: "+",
+            },
+            {
+              label: "Influencers",
+              value: counters.influencers,
+              icon: <FaHashtag />,
               suffix: "+",
             },
           ].map((s, i) => (
