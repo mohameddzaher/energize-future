@@ -81,9 +81,9 @@ export default function AboutPage() {
       name: 'Nader Magdy',
       title: 'CEO',
       img: '/images/nader.jpeg',
-      desc: 'Visionary leader with 15+ years in business development and strategic growth.',
+      desc: 'Visionary leader with 20+ years in business development and strategic growth.',
       expertise: ['Strategy', 'Business Dev', 'Leadership'],
-      experience: '15+ years'
+      experience: '20+ years'
     },
     {
       name: 'Eslam Samy',
