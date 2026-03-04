@@ -79,7 +79,7 @@ export default function AboutPage() {
   const management = [
     {
       name: 'Nader Magdy',
-      title: 'CEO & Founder',
+      title: 'CEO',
       img: '/images/nader.jpeg',
       desc: 'Visionary leader with 15+ years in business development and strategic growth.',
       expertise: ['Strategy', 'Business Dev', 'Leadership'],
@@ -510,10 +510,10 @@ export default function AboutPage() {
                 className="group text-center bg-gradient-to-br from-white/5 to-transparent p-4 rounded-xl border border-white/10 shadow hover:shadow-md transition-all"
               >
                 <div className="relative inline-block mb-3">
-                  <img 
-                    src={member.img} 
-                    alt={member.name} 
-                    className="w-20 h-20 object-cover rounded-xl mx-auto shadow group-hover:shadow-md transition-all"
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-32 h-44 object-cover rounded-xl mx-auto shadow group-hover:shadow-md transition-all"
                   />
                   <div className="absolute -bottom-1 -right-1 bg-gradient-to-r from-[#f37121] to-orange-500 text-white p-1 rounded-full shadow">
                     <FaUserTie className="text-xs" />
