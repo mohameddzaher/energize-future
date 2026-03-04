@@ -1235,7 +1235,6 @@ import {
   FaGraduationCap,
   FaGlobeAmericas,
   FaQuoteLeft,
-  FaBuilding,
   FaHome,
   FaHardHat,
   FaBullhorn,
@@ -1289,7 +1288,7 @@ export default function CreativeEFG() {
         {/* HERO */}
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#f37121] to-orange-400">
+            <h1 className="text-3xl md:text-4xl font-bold leading-tight text-white">
               Energize Future Group
             </h1>
             <p className="text-gray-300 max-w-md text-sm">
@@ -1304,7 +1303,7 @@ export default function CreativeEFG() {
               </span>
               , and{" "}
               <span className="text-[#f37121] font-semibold">
-                real estate development
+                marketing & influencers agency
               </span>
               . Trusted, compliant, and built for Vision 2030 impact.
             </p>
@@ -1331,8 +1330,8 @@ export default function CreativeEFG() {
                 trucks
               </div>
               <div className="bg-white/5 px-3 py-1.5 rounded-lg flex items-center gap-1">
-                <FaBuilding className="text-[#f37121] text-xs" /> Projects: 15+
-                completed
+                <FaBullhorn className="text-[#f37121] text-xs" /> Campaigns: 50+
+                delivered
               </div>
             </div>
           </div>
