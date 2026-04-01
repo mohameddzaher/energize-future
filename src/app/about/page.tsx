@@ -85,22 +85,6 @@ export default function AboutPage() {
       expertise: ['Strategy', 'Business Dev', 'Leadership'],
       experience: '20+ years'
     },
-    {
-      name: 'Eslam Samy',
-      title: 'Head of B2C',
-      img: '/images/102.jpeg',
-      desc: 'Expert in customer engagement and educational operations management.',
-      expertise: ['CX', 'Education', 'Operations'],
-      experience: '12+ years'
-    },
-    {
-      name: 'Hossam Mohamed',
-      title: 'COO',
-      img: '/images/103.jpeg',
-      desc: 'Operations specialist ensuring seamless integration across all divisions.',
-      expertise: ['Operations', 'Logistics', 'Quality'],
-      experience: '10+ years'
-    },
   ]
 
   const employees = [
@@ -490,14 +474,14 @@ export default function AboutPage() {
             className="text-center space-y-3"
           >
             <h2 className="text-xl md:text-2xl font-bold text-[#f37121]">
-              Leadership
+              Board of Directors
             </h2>
             <p className="text-gray-400 text-sm">
               Visionary leaders driving our growth strategy
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="flex justify-center">
             {management.map((member, index) => (
               <motion.div
                 key={index}
@@ -507,7 +491,7 @@ export default function AboutPage() {
                 variants={scaleIn}
                 transition={{ delay: index * 0.15 }}
                 whileHover={{ y: -3 }}
-                className="group text-center bg-gradient-to-br from-white/5 to-transparent p-4 rounded-xl border border-white/10 shadow hover:shadow-md transition-all"
+                className="group text-center bg-gradient-to-br from-white/5 to-transparent p-6 rounded-xl border border-white/10 shadow hover:shadow-md transition-all max-w-sm w-full"
               >
                 <div className="relative inline-block mb-3">
                   <img
