@@ -23,7 +23,7 @@
 //           Our Divisions
 //         </h2>
 //         <p className="text-center text-gray-300 max-w-xl mx-auto mb-12 text-sm md:text-base">
-//           Energize Future Group is a diversified organization combining excellence
+//           Energize Future is a diversified organization combining excellence
 //           in education and logistics - building a smarter, more connected future.
 //         </p>
 
@@ -80,7 +80,7 @@ export default function OurDivisions() {
           Our Divisions
         </h2>
         <p className="text-center text-gray-300 max-w-xl mx-auto mb-12 text-sm md:text-base">
-          Energize Future Group is a diversified organization combining excellence
+          Energize Future is a diversified organization combining excellence
           in education, logistics, and marketing & influencer services - building a smarter, more connected future.
         </p>
 

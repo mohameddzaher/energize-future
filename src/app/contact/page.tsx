@@ -26,7 +26,7 @@
 //             variants={reveal} 
 //             className="text-2xl md:text-3xl font-bold text-[#f37121]"
 //           >
-//             Contact Energize Future Group
+//             Contact Energize Future
 //           </motion.h1>
 //           <motion.p 
 //             initial="hidden" 
@@ -183,7 +183,7 @@ export default function ContactPage() {
         {/* HERO */}
         <section className="text-center space-y-3">
           <h1 className="text-2xl md:text-3xl font-bold text-[#f37121]">
-            Contact Energize Future Group
+            Contact Energize Future
           </h1>
           <p className="text-gray-400 text-sm max-w-md mx-auto">
             We&apos;d love to hear from you! Reach out for inquiries, partnerships, or any questions.

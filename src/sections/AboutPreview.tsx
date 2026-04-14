@@ -46,7 +46,7 @@ export default function AboutPreview() {
         >
           <div className="md:w-1/2 text-left space-y-4">
             <h2 className="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-[#f37121] to-orange-500 bg-clip-text text-transparent">
-              Energize Future Group ⚡
+              Energize Future ⚡
             </h2>
             <div className="w-20 h-[3px] bg-gradient-to-r from-[#f37121] to-orange-600 rounded-full" />
             <p className="text-gray-300 text-base md:text-md leading-relaxed">

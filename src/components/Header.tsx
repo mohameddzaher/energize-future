@@ -49,8 +49,10 @@ export default function Header() {
         scrolled ? 'bg-[#0a0f1d] shadow-lg' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-evenly backdrop-blur-sm">
-        <div className="font-bold text-white">EFG</div>
+      <div className="max-w-6xl mx-auto px-6 py-2 flex items-center justify-evenly backdrop-blur-sm">
+        <Link href="/" className="shrink-0">
+          <img src="/images/EF-white.png" alt="Energize Future" className="h-8 md:h-10 w-auto" />
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           <nav className="flex items-center gap-6 text-sm font-bold text-white">

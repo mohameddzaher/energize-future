@@ -229,7 +229,7 @@ export default function AboutPage() {
                 </span>
               </h1>
               <p className="text-sm text-gray-300 leading-relaxed">
-                Energize Future Group combines <span className="text-[#f37121] font-medium">international education</span>,{' '}
+                Energize Future combines <span className="text-[#f37121] font-medium">international education</span>,{' '}
                 <span className="text-[#f37121] font-medium">premium childcare</span>,{' '}
                 <span className="text-[#f37121] font-medium">advanced logistics</span>, and{' '}
                 <span className="text-[#f37121] font-medium">marketing & influencer services</span> -

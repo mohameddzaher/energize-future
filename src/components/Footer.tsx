@@ -135,7 +135,7 @@
 //         <div className="border-t border-white/10 pt-4">
 //           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
 //             <div className="text-xs text-gray-400">
-//               © 2025 Energize Future Group. All rights reserved.
+//               © 2025 Energize Future. All rights reserved.
 //             </div>
 //             <div className="flex items-center gap-4 text-xs text-gray-400">
 //               <span className="flex items-center gap-1">
@@ -344,7 +344,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-4">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
             <div className="text-xs text-gray-400">
-              © 2025 Energize Future Group. All rights reserved.
+              © 2025 Energize Future. All rights reserved.
             </div>
             <div className="flex items-center gap-2 text-xs text-gray-400">
               <span className="flex items-center gap-1">

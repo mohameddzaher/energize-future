@@ -106,7 +106,7 @@
 //               variants={reveal}
 //               className="text-3xl md:text-4xl font-bold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#f37121] to-orange-400"
 //             >
-//               Energize Future Group
+//               Energize Future
 //             </motion.h1>
 //             <motion.p
 //               variants={reveal}
@@ -1292,7 +1292,7 @@ export default function CreativeEFG() {
         <section className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold leading-tight text-white">
-              Energize Future Group
+              Energize Future
             </h1>
             <p className="text-gray-300 max-w-md text-sm">
               Empowering generations - integrating{" "}
@@ -1877,68 +1877,6 @@ export default function CreativeEFG() {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* TEAM */}
-        <section>
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-[#f37121]">
-              Our Leadership Team
-            </h2>
-            <p className="text-gray-400 mt-1 text-sm max-w-xl mx-auto">
-              Experienced professionals driving our vision forward across all
-              divisions
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              {
-                name: "Ahmed Hassan",
-                title: "COO",
-                img: "/images/107.jpeg",
-                desc: "8+ years in Management",
-              },
-              {
-                name: "Hossam Magdy",
-                title: "CEO",
-                img: "/images/101.jpeg",
-                desc: "15+ years in business development",
-              },
-              {
-                name: "Eslam Zaky",
-                title: "B2C HOD",
-                img: "/images/102.jpeg",
-                desc: "Logistics expert with 10+ years",
-              },
-              {
-                name: "Mohamed Ramy",
-                title: "HR Manager",
-                img: "/images/103.jpeg",
-                desc: "Talent development specialist",
-              },
-            ].map((p, i) => (
-              <div
-                key={i}
-                className="bg-gradient-to-b from-white/5 to-transparent p-3 rounded-xl text-center border border-white/10 shadow hover:shadow-md transition-all"
-              >
-                <div className="relative inline-block">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    className="w-35 h-50 object-cover rounded-3xl mx-auto shadow"
-                  />
-                  <div className="absolute bottom-0 right-0 w-4 h-4 bg-[#f37121] rounded-full border border-white"></div>
-                </div>
-                <div className="mt-3">
-                  <div className="font-bold text-sm">{p.name}</div>
-                  <div className="text-[#f37121] text-xs font-medium">
-                    {p.title}
-                  </div>
-                  <div className="text-gray-400 text-xs mt-1">{p.desc}</div>
-                </div>
-              </div>
-            ))}
           </div>
         </section>
 

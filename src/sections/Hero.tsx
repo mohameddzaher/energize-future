@@ -24,18 +24,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className=" text-2xl md:text-3xl font-extrabold "
+          className=" text-2xl md:text-3xl font-extrabold uppercase "
         >
-          Energi<span className="text-[#f37121]">Z</span>e Future Group
+          ENERGI<span className="text-[#f37121]">Z</span>E FUTURE
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
-          className=" text-sm md:text-sm font-bold mb-8 mt-8 text-center max-w-xl"
+          className=" text-sm md:text-sm font-bold mb-8 mt-8 text-center max-w-xl uppercase"
         >
-            A multi-sector group leading in education and heavy logistics - shaping brighter futures and powering seamless operations across the region.
+            A MULTI-SECTOR GROUP LEADING IN EDUCATION AND HEAVY LOGISTICS - SHAPING BRIGHTER FUTURES AND POWERING SEAMLESS OPERATIONS ACROSS THE REGION.
         </motion.p>
 
         <motion.div
