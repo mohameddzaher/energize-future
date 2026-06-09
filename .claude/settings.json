@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add src/app/about/page.tsx src/app/divisions/real-estate/page.tsx src/app/services/page.tsx src/components/Footer.tsx src/sections/CreativeEFG.tsx src/sections/OurDivisions.tsx src/app/divisions/marketing-influencers/)",
+      "Bash(git push origin main)",
+      "Bash(npm show next dist-tags.latest)",
+      "Bash(npm show next versions --json)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\)\\); console.log\\(v.filter\\(x=>x.startsWith\\(''15.''\\)\\).slice\\(-5\\).join\\(''\\\\n''\\)\\)\")",
+      "WebFetch(domain:ntl.fyi)",
+      "WebFetch(domain:www.netlify.com)",
+      "Bash(node -e \"const v=JSON.parse\\(require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\)\\); console.log\\(v.filter\\(x=>/^15\\\\.5\\\\.\\\\d+$/.test\\(x\\)\\).join\\(''\\\\n''\\)\\)\")",
+      "Bash(npm install next@15.5.12 --save-exact)",
+      "Bash(git add:*)",
+      "Bash(sed -i '' 's|bg-transparent\"|bg-gradient-to-b from-transparent via-[#1a2747]/40 to-transparent\"|g' src/sections/AboutPreview.tsx src/sections/ServicesSection.tsx src/sections/VisionMissionValues.tsx src/sections/ContactSection.tsx)",
+      "Bash(sed -i '' 's|py-20 bg-transparent border-t|py-20 bg-gradient-to-b from-[#25375f]/30 to-transparent border-t|g' src/sections/OurDivisions.tsx)",
+      "Bash(find src:*)",
+      "Bash(git ls-tree:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/mohamedzaher/Desktop/energize-future-website/src/app/divisions"
+    ]
+  }
+}
